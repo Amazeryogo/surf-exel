@@ -4,7 +4,8 @@ surf-exel is a silly editor.
 
 
 It takes in an os path to a file, for example:
-/Users/username/Dropbox/blueberry/hi.txt
+
+#### /Users/username/Dropbox/blueberry/hi.txt
 
 and asks you to give one mode, r for reading and w for writing.
 
