@@ -25,7 +25,7 @@ It prints the contents of a file and breaks.
 go to your terminal
 navigate to the directory where your surf-exel is kept using cd, for example:
 
-$cd Downloads
+$cd Downloads <br/>
 $cd surf-exel
 
 
