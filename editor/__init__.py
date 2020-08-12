@@ -14,6 +14,8 @@ def Edit_And_overwrite(file):
         if p == ".":
             file.close()
             break
+        elif p == "/n":
+            file.write('\n')
         else:
             file.write(p)
 
