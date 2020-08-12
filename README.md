@@ -21,11 +21,9 @@ It prints the contents of a file and breaks.
 ## How do I run Surf-exel?
 go to your terminal
 navigate to the directory where your surf-exel is kept using cd, for example:
+~~~ $ cd Downloads ~~~
+~~~ $ cd surf-exel ~~~
 
-'$ cd Downloads'
-'$ cd surf-exel'
-
-
-
+now
 
 
