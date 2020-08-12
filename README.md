@@ -29,7 +29,7 @@ $cd Downloads <br/>
 $cd surf-exel
 
 
-now use ls, if you find 2 files , main.py and editor then you are on the correct path.
+now use ls, if you find 2 files , main.py and editor (along with a bunch of files like README.md and LICENSE) then you are on the correct path.
 next, write  
 #### python3.7 main.py
 
