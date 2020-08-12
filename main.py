@@ -11,6 +11,7 @@ def getPathandopeneditor():
         print("the path is where your file is located, for example")
         print("C:\\Users\\Admin\\Desktop\\results.txt'")
         print("C:\\Users\\suresh\\gopher\\go.py'")
+        getPathandopeneditor()
     else:
         y = input("mode:")
         if y == "w":
