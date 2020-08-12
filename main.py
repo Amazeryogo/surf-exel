@@ -1,7 +1,6 @@
 import editor
 
 print("Welcome to surf-exel command-line editor")
-print("please make sure the file you are going to edit is pre-made and it can accessible to surf-exel")
 print("please enter the path, \n if you don't know what path is,write --h{path} ")
 
 
