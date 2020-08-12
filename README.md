@@ -19,11 +19,20 @@ It prints the contents of a file and breaks.
 
 
 ## How do I run Surf-exel?
+### To use surf-exel , you need python 3.7 and above , and some terminal experience
+
 go to your terminal
 navigate to the directory where your surf-exel is kept using cd, for example:
-~~~ $ cd Downloads ~~~
-~~~ $ cd surf-exel ~~~
 
-now
+$cd Downloads
+$cd surf-exel
 
+
+now use ls, if you find 2 files , main.py and editor then you are on the correct path.
+next, write  
+#### python3.7 main.py
+
+and it should work!
+
+You may find bugs, so if you find bugs,please report them in issues
 
