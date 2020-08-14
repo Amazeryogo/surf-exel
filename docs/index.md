@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+# What is surf-exel?
 
-You can use the [editor on GitHub](https://github.com/Amazeryogo/surf-exel/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+surf-exel is a silly editor.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+It takes in an os path to a file, for example:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### /Users/username/Dropbox/blueberry/hi.txt
 
-```markdown
-Syntax highlighted code block
+and asks you to give one mode, r for reading and w for writing or ov to overwrite and destroy the contents of a file.
 
-# Header 1
-## Header 2
-### Header 3
+## When you give the mode w
 
-- Bulleted
-- List
+It asks you to commit in a while loop.
+to stop it asking, take a new line and write a full stop
+.
+## When you give the mode r
 
-1. Numbered
-2. List
+It prints the contents of a file and breaks.
 
-**Bold** and _Italic_ and `Code` text
+## When you give the mode ov
 
-[Link](url) and ![Image](src)
-```
+Destroys the contents of a file
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## How do I run Surf-exel?
+### To use surf-exel , you need python 3.7 and above , and some terminal experience
 
-### Jekyll Themes
+go to your terminal
+navigate to the directory where your surf-exel is kept using cd, for example:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Amazeryogo/surf-exel/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+$cd Downloads <br/>
+$cd surf-exel
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+now use ls, if you find 2 files , main.py and editor (along with a bunch of files like README.md and LICENSE) then you are on the correct path.
+next, write  
+#### python3.7 main.py
+
+and it should work!
+
+You may find bugs, so if you find bugs,please report them in issues
+
+## Updates:
+to make a new line , please hit an enter ,
+commit /n to create a new line
+
