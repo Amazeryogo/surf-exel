@@ -17,6 +17,8 @@ def getPathandopeneditor():
             editor.getPath(x, "w")
         elif y == "r":
             editor.getPath(x, "r")
+        elif y == "ov":
+            editor.getPath(x,"ov")
         else:
             print("ERROR: Invalid mode")
 
