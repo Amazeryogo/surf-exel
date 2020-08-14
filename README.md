@@ -7,7 +7,7 @@ It takes in an os path to a file, for example:
 
 #### /Users/username/Dropbox/blueberry/hi.txt
 
-and asks you to give one mode, r for reading and w for writing.
+and asks you to give one mode, r for reading and w for writing or ov to overwrite and destroy the contents of a file.
 
 ## When you give the mode w
 
@@ -18,6 +18,9 @@ to stop it asking, take a new line and write a full stop
 
 It prints the contents of a file and breaks.
 
+## When you give the mode ov
+
+Destroys the contents of a file
 
 ## How do I run Surf-exel?
 ### To use surf-exel , you need python 3.7 and above , and some terminal experience
