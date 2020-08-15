@@ -26,6 +26,10 @@ def Edit_And_overwrite(file):
         elif p == "/n":
             file.write('\n')
             n = n + 1
+        elif p == " " :
+            n = n+1
+        elif p == "":
+            n = n + 1
         else:
             file.write(p)
 
@@ -43,3 +47,4 @@ def overwrite(file):
     else:
         print("error, please answer with y or n")
         overwrite(file)
+
