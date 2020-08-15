@@ -13,13 +13,19 @@ def getPath(path,mode):
             Readout(read)
 def Edit_And_overwrite(file):
     print("you are ready to go! \n")
+    lines = int(0)
+    n = int(0)
     while True:
         p = str(input("commit: "))
+        lines = lines + 1
         if p == ".":
             file.close()
+            x = (lines - n)-1
+            print("lines:",x)
             break
         elif p == "/n":
             file.write('\n')
+            n = n + 1
         else:
             file.write(p)
 
