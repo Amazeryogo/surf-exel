@@ -42,4 +42,5 @@ You may find bugs, so if you find bugs,please report them in issues
 
 ## Updates:
 to make a new line , please hit an enter ,
-commit /n to create a new line
+commit /n to create a new line <br/>
+ps :- you do not need to do this from v3.0 onwards
