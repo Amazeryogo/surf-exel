@@ -32,7 +32,7 @@ def Edit_And_overwrite(file):
             n = n + 1
         else:
             file.write(p)
-            file.write(\n)
+            file.write('\n')
 
 def Readout(file):
     for line in file:
