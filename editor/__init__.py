@@ -16,7 +16,7 @@ def Edit_And_overwrite(file):
     lines = int(0)
     n = int(0)
     while True:
-        p = str(input("commit: "))
+        p = str(input("c: "))
         lines = lines + 1
         if p == ".":
             file.close()
@@ -47,4 +47,3 @@ def overwrite(file):
     else:
         print("error, please answer with y or n")
         overwrite(file)
-
