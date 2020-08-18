@@ -1,15 +1,15 @@
 import editor
 
 print("Surf-exel")
-print("please enter the path, \n if you don't know what path is,write --h{path} ")
+print("please enter the path, \n if you don't know what path is,write --h")
 
 
 def getPathandopeneditor():
     x = input("p: ")
-    if x == "--h{path}":
-        print("the path is where your file is located, for example")
-        print("C:\\Users\\Admin\\Desktop\\results.txt'")
-        print("C:\\Users\\suresh\\gopher\\go.py'")
+    if x == "--h":
+        with open("help.txt",'r') as file:
+            for line in file:
+                print(line)
         getPathandopeneditor()
     else:
         y = input("m:")

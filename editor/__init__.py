@@ -30,6 +30,10 @@ def Edit_And_overwrite(file):
             n = n+1
         elif p == "":
             n = n + 1
+        elif p == "--h " :
+            with open("help.txt",'r') as file:
+                for line in file:
+                    print(line)
         else:
             file.write(p)
             file.write('\n')
