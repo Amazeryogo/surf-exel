@@ -11,7 +11,9 @@ def addfav(path):
                 print('answer with y or n')
                 if add__p == 'y':
                     with open("FavPath.txt",'a') as file:
-                        file.write(path \n)
+                        file.write(path)
+                        file.write(\n)
+                        
 
 
 def getPath(path,mode):
