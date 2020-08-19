@@ -1,7 +1,7 @@
 import os
 from time import sleep
 def addfav(path):
-    with open("FavPath.txt" as )file:
+    with open("FavPath.txt" ,'r') as file:
         for line in file:
             x = list[line]
             if path in x :
