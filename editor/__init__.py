@@ -15,6 +15,7 @@ def Edit_And_overwrite(file):
     print("you are ready to go! \n")
     lines = int(0)
     n = int(0)
+    t_char = int(0)
     while True:
         p = str(input("c: "))
         lines = lines + 1
@@ -22,6 +23,7 @@ def Edit_And_overwrite(file):
             file.close()
             x = (lines - n)-1
             print("lines:",x)
+            print("total characters:",t_char)
             break
         elif p == "/n":
             file.write('\n')
@@ -37,6 +39,8 @@ def Edit_And_overwrite(file):
         else:
             file.write(p)
             file.write('\n')
+            x = len(p)
+            t_char = x + t_char
 
 def Readout(file):
     for line in file:
