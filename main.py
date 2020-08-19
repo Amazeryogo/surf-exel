@@ -15,6 +15,7 @@ def getPathandopeneditor():
         with open("FavPaths.txt",'r') as file:
             for line in file:
                 print(line)
+                getPathandopeneditor()
     else:
         y = input("m:")
         if y == "w":
