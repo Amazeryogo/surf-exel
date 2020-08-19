@@ -12,8 +12,8 @@ def addfav(path):
                 if add__p == 'y':
                     with open("FavPath.txt",'a') as file:
                         file.write(path)
-                        file.write(\n)
-                        
+                        file.write('\n')
+
 
 
 def getPath(path,mode):
