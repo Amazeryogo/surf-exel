@@ -3,8 +3,7 @@ from time import sleep
 def addfav(path):
     with open("FavPaths.txt" ,'r') as file:
         for line in file:
-            x = list[line]
-            if path in x :
+            if path in line :
                 pass
             else:
                 add__p = input("Do you want to add path in your favourites?")
