@@ -23,7 +23,6 @@ def Edit_And_overwrite(file):
             file.close()
             x = (lines - n)-1
             print("lines:",x)
-            t_char = t_char - 1
             print("total characters:",t_char)
             break
         elif p == "/n":
