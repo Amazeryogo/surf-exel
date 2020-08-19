@@ -23,3 +23,5 @@ def getPathandopeneditor():
             print("ERROR: Invalid mode")
 
 getPathandopeneditor()
+
+
