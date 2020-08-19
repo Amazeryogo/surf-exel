@@ -1,16 +1,35 @@
 import os
 from time import sleep
+def addfav(path):
+    with open("FavPath.txt" as )file:
+        for line in file:
+            x = list[line]
+            if path in x :
+                pass
+            else:
+                add__p = input("Do you want to add path in your favourites?")
+                print('answer with y or n')
+                if add__p == 'y':
+                    with open("FavPath.txt",'a') as file:
+                        file.write(path \n)
+
+
 def getPath(path,mode):
     if mode == 'w':
+        addfav(path)
         with open(path, mode='w+') as to_be_edited:
             Edit_And_overwrite(to_be_edited)
 
     elif mode == 'ov':
+        addfav(path)
         overwrite(path)
+
 
     else:
         with open(path, mode='r') as read:
+            addfav(path)
             Readout(read)
+
 def Edit_And_overwrite(file):
     print("you are ready to go! \n")
     lines = int(0)
