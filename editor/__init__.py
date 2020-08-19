@@ -1,7 +1,7 @@
 import os
 from time import sleep
 def addfav(path):
-    with open("FavPath.txt" ,'r') as file:
+    with open("FavPaths.txt" ,'r') as file:
         for line in file:
             x = list[line]
             if path in x :
@@ -10,7 +10,7 @@ def addfav(path):
                 add__p = input("Do you want to add path in your favourites?")
                 print('answer with y or n')
                 if add__p == 'y':
-                    with open("FavPath.txt",'a') as file:
+                    with open("FavPaths.txt",'a') as file:
                         file.write(path)
                         file.write('\n')
 

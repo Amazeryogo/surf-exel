@@ -12,7 +12,7 @@ def getPathandopeneditor():
                 print(line)
         getPathandopeneditor()
     elif x == "favpath":
-        with open("FavPath.txt",'r') as file:
+        with open("FavPaths.txt",'r') as file:
             for line in file:
                 print(line)
     else:
