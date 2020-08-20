@@ -11,6 +11,11 @@ def getPathandopeneditor():
             for line in file:
                 print(line)
         getPathandopeneditor()
+    elif x == "favpath":
+        with open("FavPaths.txt",'r') as file:
+            for line in file:
+                print(line)
+                getPathandopeneditor()
     else:
         y = input("m:")
         if y == "w":
@@ -23,5 +28,3 @@ def getPathandopeneditor():
             print("ERROR: Invalid mode")
 
 getPathandopeneditor()
-
-
