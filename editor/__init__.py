@@ -1,78 +1,105 @@
-import os
-from time import sleep
-def addfav(path):
-    with open("FavPaths.txt" ,'r') as file:
-        for line in file:
-            if path in line :
-                pass
-            else:
-                add__p = input("Do you want to add path in your favourites?")
-                print('answer with y or n')
-                if add__p == 'y':
-                    with open("FavPaths.txt",'a') as file:
-                        file.write(path)
-                        file.write('\n')
+from tkinter import *
+from tkinter import filedialog
+from tkinter import font
 
+root = Tk()
+root.title('surf-exel')
+root.geometry("1200x600")
+global file_status
+file_status = False
 
+global selected
+selected = False
 
-def getPath(path,mode):
-    if mode == 'w':
-        addfav(path)
-        with open(path, mode='w+') as to_be_edited:
-            Edit_And_overwrite(to_be_edited)
+def cuttext(e):
+    global selected
+    if my_text.selection_get():
+        selected = my_text.selection_get()
+        my_text.delete("sel.first","sel.last")
+def copytext(e):
+    if e:
+        selected = root.clipboard_get()
 
-    elif mode == 'ov':
-        addfav(path)
-        overwrite(path)
+    if my_text.selection_get():
+        selected = my_text.selection_get()
+        root.clipboard_clear()
+        root.clipboard_append(selected)
+def pastetext(e):
+    if selected:
+        pos = my_text.index(INSERT)
+        my_text.insert(pos,selected)
 
-
+def saveCurrentFile(e):
+    global file_status
+    if file_status:
+        textr = open(file_status, 'w')
+        textr.write(my_text.get(1.0,END))
+        textr.close()
+        root.title('file saved')
     else:
-        with open(path, mode='r') as read:
-            addfav(path)
-            Readout(read)
+        saveAsFile()
 
-def Edit_And_overwrite(file):
-    print("you are ready to go! \n")
-    lines = int(0)
-    n = int(0)
-    t_char = int(0)
-    while True:
-        p = str(input("c: "))
-        lines = lines + 1
-        if p == ".":
-            file.close()
-            x = (lines - n)-1
-            print("lines:",x)
-            print("total characters:",t_char)
-            break
-        elif p == "/n":
-            file.write('\n')
-            n = n + 1
-        elif p == " " :
-            n = n+1
-        elif p == "":
-            n = n + 1
-        elif p == "--h" :
-            with open("help.txt",'r') as file:
-                for line in file:
-                    print(line)
-        else:
-            file.write(p)
-            file.write('\n')
-            x = len(p)
-            t_char = x + t_char
 
-def Readout(file):
-    for line in file:
-        print(line)
+def new_file(e):
+    my_text.delete("1.0",END)
+    root.title('A new file')
+    global file_status
+    file_status = False
 
-def overwrite(file):
-    x = input("Are you sure you want to do it?")
-    if x == "y":
-        f = open(file, 'r+')
-        f.truncate(0)
-    elif x == "n":
-        sleep(2)
-    else:
-        print("error, please answer with y or n")
-        overwrite(file)
+def open_file():
+    my_text.delete("1.0",END)
+    file = filedialog.askopenfilename(initialdir='',title="opening a file")
+    if file:
+        global file_status
+        file_status = file
+    file = open(file, mode='r')
+    spyders = file.read()
+    my_text.insert(END,spyders)
+
+def saveAsFile():
+    textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="saving the file")
+    textr = open(textr, 'w')
+    textr.write(my_text.get(1.0,END))
+    textr.close()
+my_frame = Frame(root)
+my_frame.pack(pady=5)
+
+text_scroll = Scrollbar(my_frame)
+text_scroll.pack(side=RIGHT,fill = Y)
+
+
+my_text = Text(my_frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set)
+
+
+my_text.pack()
+
+my_menu = Menu(root)
+root.config(menu=my_menu)
+
+file_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label='File',menu=file_menu)
+file_menu.add_command(label = "open file",command = open_file)
+file_menu.add_command(label = "save", command = saveCurrentFile)
+file_menu.add_command(label = "save as",command = saveAsFile)
+file_menu.add_command(label = "new file",command = new_file)
+
+edit_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label='Edit',menu=edit_menu)
+edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False))
+edit_menu.add_command(label = "Copy", command = lambda: copytext(False))
+edit_menu.add_command(label = "Paste",command = lambda: pastetext(False))
+edit_menu.add_command(label = "Redo")
+edit_menu.add_command(label = "Undo")
+
+text_scroll.config(command= my_text.yview)
+
+
+
+
+root.bind('<Control-Key-x>',cuttext)
+root.bind('<Control-Key-c>',copytext)
+root.bind('<Control-Key-v>',pastetext)
+root.bind('<Control-Key-n>',new_file)
+root.bind('<Control-Key-s>',saveCurrentFile)
+root.mainloop()
+
