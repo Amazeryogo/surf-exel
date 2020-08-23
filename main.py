@@ -28,3 +28,5 @@ def getPathandopeneditor():
             print("ERROR: Invalid mode")
 
 getPathandopeneditor()
+
+# lets make this into a physical text editor
