@@ -1,2 +1,0 @@
-def Find(string, keyword):
-    
