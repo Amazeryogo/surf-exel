@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter import font
+from tkinter import messagebox
+from version import version
 
 root = Tk()
 root.title('surf-exel')
@@ -10,6 +12,9 @@ file_status = False
 
 global selected
 selected = False
+
+def Version():
+    messagebox.showinfo('version',version)
 
 def cuttext(e):
     global selected
@@ -75,6 +80,10 @@ my_text.pack()
 
 my_menu = Menu(root)
 root.config(menu=my_menu)
+
+about_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label='About',menu=file_menu)
+file_menu.add_command(label = "Version",command = version)
 
 file_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='File',menu=file_menu)
