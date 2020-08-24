@@ -2,8 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox
-from editor import version
-from editor import filemenu
+import editor
 
 root = Tk()
 root.title('surf-exel')
@@ -14,8 +13,10 @@ file_status = False
 global selected
 selected = False
 
-def Version():
-    messagebox.showinfo('version',version)
+
+
+def version():
+    messagebox.showinfo('version',editor.version)
 
 def cuttext(e):
     global selected
@@ -82,22 +83,22 @@ my_text = Text(my_frame,width=80,height=30,font=('Helvetica',14),selectbackgroun
 
 my_text.pack()
 
+
+
+global my_menu
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
-about_menu = Menu(my_menu,tearoff=False)
+global file_menu
+file_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label='File',menu=file_menu)
+file_menu.add_command(label = "Open",command = open_file)
+file_menu.add_command(label = "Save", command = saveCurrentFile)
+file_menu.add_command(label = "Save as",command = saveAsFile)
+file_menu.add_command(label = "New file",command = new_file)
+file_menu.add_command(label = "Version",command = version)
 
-my_menu.add_cascade(label='About',menu=filemenu.file_menu)
-filemenu.file_menu.add_command(label = "Version",command = version)
-
-
-
-my_menu.add_cascade(label='File',menu=filemenu.file_menu)
-filemenu.file_menu.add_command(label = "Open",command = open_file)
-filemenu.file_menu.add_command(label = "Save", command = saveCurrentFile)
-filemenu.file_menu.add_command(label = "Save as",command = saveAsFile)
-filemenu.file_menu.add_command(label = "New file",command = new_file)
-
+global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
 edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False))
@@ -105,6 +106,12 @@ edit_menu.add_command(label = "Copy", command = lambda: copytext(False))
 edit_menu.add_command(label = "Paste",command = lambda: pastetext(False))
 edit_menu.add_command(label = "Redo")
 edit_menu.add_command(label = "Undo")
+
+
+
+
+
+
 
 text_scroll.config(command= my_text.yview)
 
