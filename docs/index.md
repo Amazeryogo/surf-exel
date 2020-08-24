@@ -14,7 +14,7 @@ such as Raspberry pi <br/>
 # The features surf-exel has : 
 
 # Upto Gen 3.1:
-What Features does it have:What Features does it have:<br/>
+What Features does it have:<br/>
 modes :<br/>
 Currently (v3.1) it has 3 modes :-<br/>
 <br/>
