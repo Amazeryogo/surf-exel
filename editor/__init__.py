@@ -2,10 +2,10 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox
-import editor
+import editor.version as ev
 
 root = Tk()
-root.title('surf-exel')
+root.title('Surf-exel')
 root.geometry("800x500")
 global file_status
 file_status = False
@@ -16,7 +16,7 @@ selected = False
 
 
 def version():
-    messagebox.showinfo('version',editor.version)
+    messagebox.showinfo('version',ev.v)
 
 def cuttext(e):
     global selected
@@ -55,7 +55,7 @@ def new_file(e):
 
 def open_file():
     text.delete("1.0",END)
-    file = filedialog.askopenfilename(initialdir='',title="opening a file")
+    file = filedialog.askopenfilename(initialdir='',title="Open")
     if file:
         global file_status
         file_status = file
@@ -64,7 +64,7 @@ def open_file():
     text.insert(END,spyders)
 
 def saveAsFile():
-    textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="saving the file")
+    textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="Save")
     textr = open(textr, 'w')
     textr.write(text.get(1.0,END))
     textr.close()
