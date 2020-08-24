@@ -6,7 +6,7 @@ import editor
 
 root = Tk()
 root.title('surf-exel')
-root.geometry("1200x600")
+root.geometry("1200x680")
 global file_status
 file_status = False
 
@@ -20,27 +20,27 @@ def version():
 
 def cuttext(e):
     global selected
-    if my_text.selection_get():
-        selected = my_text.selection_get()
-        my_text.delete("sel.first","sel.last")
+    if text.selection_get():
+        selected = text.selection_get()
+        text.delete("sel.first","sel.last")
 def copytext(e):
     if e:
         selected = root.clipboard_get()
 
-    if my_text.selection_get():
-        selected = my_text.selection_get()
+    if text.selection_get():
+        selected = text.selection_get()
         root.clipboard_clear()
         root.clipboard_append(selected)
 def pastetext(e):
     if selected:
-        pos = my_text.index(INSERT)
-        my_text.insert(pos,selected)
+        pos = text.index(INSERT)
+        text.insert(pos,selected)
 
 def saveCurrentFile(e):
     global file_status
     if file_status:
         textr = open(file_status, 'w')
-        textr.write(my_text.get(1.0,END))
+        textr.write(text.get(1.0,END))
         textr.close()
         root.title('file saved')
     else:
@@ -48,40 +48,41 @@ def saveCurrentFile(e):
 
 
 def new_file(e):
-    my_text.delete("1.0",END)
+    text.delete("1.0",END)
     root.title('A new file')
     global file_status
     file_status = False
 
 def open_file():
-    my_text.delete("1.0",END)
+    text.delete("1.0",END)
     file = filedialog.askopenfilename(initialdir='',title="opening a file")
     if file:
         global file_status
         file_status = file
     file = open(file, mode='r')
     spyders = file.read()
-    my_text.insert(END,spyders)
+    text.insert(END,spyders)
 
 def saveAsFile():
     textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="saving the file")
     textr = open(textr, 'w')
-    textr.write(my_text.get(1.0,END))
+    textr.write(text.get(1.0,END))
     textr.close()
 
 
 
 
-my_frame = Frame(root)
-my_frame.pack(pady=5)
+frame = Frame(root)
+frame.pack(pady=5)
 
-text_scroll = Scrollbar(my_frame)
+text_scroll = Scrollbar(frame)
 text_scroll.pack(side=RIGHT,fill = Y)
 
+bottom_scroll = Scrollbar(frame,orient="horizontal")
+bottom_scroll.pack(side = BOTTOM,fill = X)
 
-my_text = Text(my_frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set)
-
-my_text.pack()
+text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
+text.pack()
 
 
 
@@ -101,11 +102,11 @@ file_menu.add_command(label = "Version",command = version)
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
-edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False), accelerator="(Ctrl+x)")
-edit_menu.add_command(label = "Copy", command = lambda: copytext(False),accelerator="(Ctrl+c)")
-edit_menu.add_command(label = "Paste",command = lambda: pastetext(False),accelerator="(Ctrl+v)")
-edit_menu.add_command(label = "Redo")
-edit_menu.add_command(label = "Undo")
+edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False), accelerator="Ctrl+x")
+edit_menu.add_command(label = "Copy", command = lambda: copytext(False),accelerator="Ctrl+c")
+edit_menu.add_command(label = "Paste",command = lambda: pastetext(False),accelerator="Ctrl+v")
+edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+y")
+edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
 
 
@@ -113,8 +114,8 @@ edit_menu.add_command(label = "Undo")
 
 
 
-text_scroll.config(command= my_text.yview)
-
+text_scroll.config(command= text.yview)
+bottom_scroll.config(command= text.xview)
 
 
 
