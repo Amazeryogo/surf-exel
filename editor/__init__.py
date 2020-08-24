@@ -66,6 +66,10 @@ def saveAsFile():
     textr = open(textr, 'w')
     textr.write(my_text.get(1.0,END))
     textr.close()
+
+
+
+    
 my_frame = Frame(root)
 my_frame.pack(pady=5)
 
@@ -74,7 +78,6 @@ text_scroll.pack(side=RIGHT,fill = Y)
 
 
 my_text = Text(my_frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set)
-
 
 my_text.pack()
 
@@ -111,4 +114,3 @@ root.bind('<Control-Key-v>',pastetext)
 root.bind('<Control-Key-n>',new_file)
 root.bind('<Control-Key-s>',saveCurrentFile)
 root.mainloop()
-
