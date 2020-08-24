@@ -36,7 +36,7 @@ def pastetext(e):
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
-def saveCurrentFile(e):
+def saveCurrentFile():
     global file_status
     if file_status:
         textr = open(file_status, 'w')
