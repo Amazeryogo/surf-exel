@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox
 import editor.version as ev
+import time
 
 root = Tk()
 root.title('Surf-exel')
@@ -51,6 +52,8 @@ def new_file(e):
     if e:
         text.delete("1.0",END)
         root.title('A new file')
+        time.sleep(5)
+        root.title('Surf-exel')
         global file_status
         file_status = False
 
