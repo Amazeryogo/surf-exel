@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox
 from editor import version
+from editor import filemenu
 
 root = Tk()
 root.title('surf-exel')
@@ -85,15 +86,17 @@ my_menu = Menu(root)
 root.config(menu=my_menu)
 
 about_menu = Menu(my_menu,tearoff=False)
-my_menu.add_cascade(label='About',menu=file_menu)
-file_menu.add_command(label = "Version",command = version)
 
-file_menu = Menu(my_menu,tearoff=False)
-my_menu.add_cascade(label='File',menu=file_menu)
-file_menu.add_command(label = "Open",command = open_file)
-file_menu.add_command(label = "Save", command = saveCurrentFile)
-file_menu.add_command(label = "Save as",command = saveAsFile)
-file_menu.add_command(label = "New file",command = new_file)
+my_menu.add_cascade(label='About',menu=filemenu.file_menu)
+filemenu.file_menu.add_command(label = "Version",command = version)
+
+
+
+my_menu.add_cascade(label='File',menu=filemenu.file_menu)
+filemenu.file_menu.add_command(label = "Open",command = open_file)
+filemenu.file_menu.add_command(label = "Save", command = saveCurrentFile)
+filemenu.file_menu.add_command(label = "Save as",command = saveAsFile)
+filemenu.file_menu.add_command(label = "New file",command = new_file)
 
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
