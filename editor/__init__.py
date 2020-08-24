@@ -48,10 +48,11 @@ def saveCurrentFile():
 
 
 def new_file(e):
-    text.delete("1.0",END)
-    root.title('A new file')
-    global file_status
-    file_status = False
+    if e:
+        text.delete("1.0",END)
+        root.title('A new file')
+        global file_status
+        file_status = False
 
 def open_file():
     text.delete("1.0",END)
