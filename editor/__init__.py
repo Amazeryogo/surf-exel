@@ -14,8 +14,18 @@ file_status = False
 global selected
 selected = False
 
+frame = Frame(root)
+
+
+text_scroll = Scrollbar(frame)
+text_scroll.pack(side=RIGHT,fill = Y)
+
+bottom_scroll = Scrollbar(frame,orient="horizontal")
+bottom_scroll.pack(side = BOTTOM,fill = X)
+
+
 text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
-text.pack()
+
 
 def version():
     messagebox.showinfo('version',ev.v)
@@ -49,14 +59,10 @@ def saveCurrentFile():
         saveAsFile()
 
 
-def new_file(e):
-    if e:
-        text.delete("1.0",END)
-        root.title('A new file')
-        time.sleep(5)
-        root.title('Surf-exel')
-        global file_status
-        file_status = False
+def new_file():
+    text.delete("1.0",END)
+    global file_status
+    file_status = False
 
 def open_file():
     text.delete("1.0",END)
@@ -75,21 +81,6 @@ def saveAsFile():
     textr.close()
 
 
-
-
-frame = Frame(root)
-frame.pack(pady=5)
-
-text_scroll = Scrollbar(frame)
-text_scroll.pack(side=RIGHT,fill = Y)
-
-bottom_scroll = Scrollbar(frame,orient="horizontal")
-bottom_scroll.pack(side = BOTTOM,fill = X)
-
-
-
-
-
 global my_menu
 my_menu = Menu(root)
 root.config(menu=my_menu)
@@ -98,10 +89,10 @@ global file_menu
 file_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='File',menu=file_menu)
 file_menu.add_command(label = "Open",command = open_file)
-file_menu.add_command(label = "Save", command = saveCurrentFile)
+file_menu.add_command(label = "Save", command = saveCurrentFile,accelerator="Ctrl+s")
 file_menu.add_command(label = "Save as",command = saveAsFile)
-file_menu.add_command(label = "New file",command = (new_file('n')))
-file_menu.add_command(label = "Version",command = version)
+file_menu.add_command(label = "New file",command = new_file)
+file_menu.add_command(label = "Version",command = version,accelerator="Ctrl+q")
 
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
@@ -121,11 +112,12 @@ edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+
 text_scroll.config(command= text.yview)
 bottom_scroll.config(command= text.xview)
 
-
-
+frame.pack(pady=5)
+text.pack()
 root.bind('<Control-Key-x>',cuttext)
 root.bind('<Control-Key-c>',copytext)
 root.bind('<Control-Key-v>',pastetext)
-root.bind('<Control-Key-n>',new_file('n'))
+root.bind('<Control-Key-n>',new_file)
 root.bind('<Control-Key-s>',saveCurrentFile)
+root.bind('<Control-Key-q>',version)
 root.mainloop()
