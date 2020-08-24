@@ -11,6 +11,7 @@ There are two versions of surf-exel:<br/>
 <br/>
 ## It is made for computers with low-capacity<br/>
 such as Raspberry pi <br/>
+# The features surf-exel has : 
 
 # Upto Gen 3.1:
 What Features does it have:What Features does it have:<br/>
