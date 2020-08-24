@@ -7,7 +7,7 @@ It is Inspired by ed, a GNU line Editor.<br/>
 There are two versions of surf-exel:<br/>
 
 ## Terminal-based : upto v3.1 <br/>
-## GUI: upcoming v4.0<br/>
+## GUI:v4.0<br/>
 <br/>
 ## It is made for computers with low-capacity<br/>
 such as Raspberry pi <br/>
