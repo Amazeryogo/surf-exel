@@ -14,7 +14,8 @@ file_status = False
 global selected
 selected = False
 
-
+text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
+text.pack()
 
 def version():
     messagebox.showinfo('version',ev.v)
@@ -85,8 +86,7 @@ text_scroll.pack(side=RIGHT,fill = Y)
 bottom_scroll = Scrollbar(frame,orient="horizontal")
 bottom_scroll.pack(side = BOTTOM,fill = X)
 
-text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
-text.pack()
+
 
 
 
