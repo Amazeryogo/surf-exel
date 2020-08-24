@@ -101,9 +101,9 @@ file_menu.add_command(label = "Version",command = version)
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
-edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False))
-edit_menu.add_command(label = "Copy", command = lambda: copytext(False))
-edit_menu.add_command(label = "Paste",command = lambda: pastetext(False))
+edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False), accelerator="(Ctrl+x)")
+edit_menu.add_command(label = "Copy", command = lambda: copytext(False),accelerator="(Ctrl+c)")
+edit_menu.add_command(label = "Paste",command = lambda: pastetext(False),accelerator="(Ctrl+v)")
 edit_menu.add_command(label = "Redo")
 edit_menu.add_command(label = "Undo")
 
