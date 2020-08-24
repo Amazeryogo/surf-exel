@@ -95,7 +95,7 @@ file_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='File',menu=file_menu)
 file_menu.add_command(label = "Open",command = open_file)
 file_menu.add_command(label = "Save", command = saveCurrentFile)
-file_menu.add_command(label = "Save as",command = saveAsFile('n'))
+file_menu.add_command(label = "Save as",command = saveAsFile)
 file_menu.add_command(label = "New file",command = (new_file('n')))
 file_menu.add_command(label = "Version",command = version)
 
