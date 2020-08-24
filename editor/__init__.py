@@ -6,7 +6,7 @@ import editor
 
 root = Tk()
 root.title('surf-exel')
-root.geometry("1200x680")
+root.geometry("800x500")
 global file_status
 file_status = False
 
