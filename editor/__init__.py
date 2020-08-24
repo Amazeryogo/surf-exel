@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox
-from version import version
+from editor import version
 
 root = Tk()
 root.title('surf-exel')
@@ -69,7 +69,7 @@ def saveAsFile():
 
 
 
-    
+
 my_frame = Frame(root)
 my_frame.pack(pady=5)
 
