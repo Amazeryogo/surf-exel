@@ -45,8 +45,6 @@ we have added a Graphical User interface to our editor , making it a real text e
 ### keywords :- as surf-exel moved from a line-editor to a text-editor, we removed the keywords
 
 
-
-## Note: V4 will be released on 25 august
 ## Note: The terminal based will be discontinued from 25 august 2020 <br/>
 
 
