@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter import font
-from tkinter import messagebox
+from tkinter import messagebox,simpledialog
 import editor.version as ev
 import time
 
@@ -27,6 +27,18 @@ bottom_scroll.pack(side = BOTTOM,fill = X)
 text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
 
 
+def find():
+    text.tag_remove('found', '1.0', END)
+    s = simpledialog.askstring("Find","Enter the Word")
+    idx = text.get('1.0',END)
+    for line in idx:
+        dx = (idx)
+        if s in dx:
+            text.tag_config('found', foreground='red')
+            lastidx = idx 
+            text.tag_add('found',idx,lastidx)
+        else:
+            pass
 def version():
     messagebox.showinfo('version',ev.v)
 
@@ -85,6 +97,13 @@ global my_menu
 my_menu = Menu(root)
 root.config(menu=my_menu)
 
+
+global about_menu
+about_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label='About',menu=about_menu)
+about_menu.add_command(label = "Version",command = version,accelerator="Ctrl+q")
+
+
 global file_menu
 file_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='File',menu=file_menu)
@@ -92,7 +111,7 @@ file_menu.add_command(label = "Open",command = open_file,accelerator="Ctrl+o")
 file_menu.add_command(label = "Save", command = saveCurrentFile,accelerator="Ctrl+s")
 file_menu.add_command(label = "Save as",command = saveAsFile)
 file_menu.add_command(label = "New file",command = new_file,accelerator="Ctrl+n")
-file_menu.add_command(label = "Version",command = version,accelerator="Ctrl+q")
+
 
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
@@ -104,7 +123,10 @@ edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+
 edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
 
-
+global search_menu
+search_menu = Menu(my_menu,tearoff=False)
+my_menu.add_cascade(label = 'search',menu = search_menu)
+search_menu.add_command(label = "find",command = find,accelerator="Ctrl+f")
 
 
 
