@@ -31,14 +31,16 @@ def find():
     text.tag_remove('found', '1.0', END)
     s = simpledialog.askstring("Find","Enter the Word")
     idx = text.get('1.0',END)
+    print(idx)
     for line in idx:
         dx = (idx)
         if s in dx:
             text.tag_config('found', foreground='red')
-            lastidx = idx 
+            lastidx = idx
             text.tag_add('found',idx,lastidx)
         else:
             pass
+            # How do we fix this?
 def version():
     messagebox.showinfo('version',ev.v)
 
