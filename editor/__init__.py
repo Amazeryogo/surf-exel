@@ -2,8 +2,10 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox,simpledialog
-import editor.version as ev
 import time
+
+global ev
+ev = ' surf-exel v4.1'
 
 root = Tk()
 root.title('Surf-exel')
@@ -28,21 +30,26 @@ text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="gre
 
 
 def find():
-    text.tag_remove('found', '1.0', END)
+    n = 0
     s = simpledialog.askstring("Find","Enter the Word")
-    idx = text.get('1.0',END)
-    print(idx)
-    for line in idx:
-        dx = (idx)
-        if s in dx:
-            text.tag_config('found', foreground='red')
-            lastidx = idx
-            text.tag_add('found',idx,lastidx)
+    all = text.get('1.0',END)
+    for line in all:
+        if line != None:
+            if s in line:
+                n = n + 1
+                print("found %s in line  ",n)
+                print(line)
+            else:
+                n = n + 1
+                print('not found in ',n)
+                print(line)
         else:
+            n = n + 1
             pass
-            # How do we fix this?
+    # HERE
+
 def version():
-    messagebox.showinfo('version',ev.v)
+    messagebox.showinfo('version',ev)
 
 def cuttext(e):
     global selected
