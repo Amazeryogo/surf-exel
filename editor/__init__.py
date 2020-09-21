@@ -5,7 +5,7 @@ from tkinter import messagebox,simpledialog
 import time
 
 global ev
-ev = ' surf-exel v4.1'
+ev = 'surf-exel v4.1'
 
 root = Tk()
 root.title('Surf-exel')
@@ -29,23 +29,23 @@ bottom_scroll.pack(side = BOTTOM,fill = X)
 text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
 
 
-def find():
-    n = 0
-    s = simpledialog.askstring("Find","Enter the Word")
-    all = text.get('1.0',END)
-    for line in all:
-        if line != None:
-            if s in line:
-                n = n + 1
-                print("found %s in line  ",n)
-                print(line)
-            else:
-                n = n + 1
-                print('not found in ',n)
-                print(line)
-        else:
-            n = n + 1
-            pass
+#def find():
+#    n = 0
+#    s = simpledialog.askstring("Find","Enter the Word")
+#    all = text.get('1.0',END)
+#    for line in all:
+#        if line != None:
+#            if s in line:
+#                n = n + 1
+#                print("found %s in line  ",n)
+#                print(line)
+#            else:
+#                n = n + 1
+#                print('not found in ',n)
+#                print(line)
+#        else:
+#            n = n + 1
+#            pass
     # HERE
 
 def version():
@@ -132,10 +132,10 @@ edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+
 edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
 
-global search_menu
-search_menu = Menu(my_menu,tearoff=False)
-my_menu.add_cascade(label = 'search',menu = search_menu)
-search_menu.add_command(label = "find",command = find,accelerator="Ctrl+f")
+#global search_menu
+#search_menu = Menu(my_menu,tearoff=False)
+#my_menu.add_cascade(label = 'search',menu = search_menu)
+#search_menu.add_command(label = "find",command = find,accelerator="Ctrl+f")
 
 
 
