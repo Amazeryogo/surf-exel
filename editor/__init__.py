@@ -18,35 +18,104 @@ selected = False
 
 frame = Frame(root)
 
+Label(frame, text ='Find').pack(side = LEFT) 
+  
+ 
+edit = Entry(frame)  
+  
+  
+edit.pack(side = LEFT, fill = BOTH, expand = 1)  
+  
+ 
+edit.focus_set()  
 
-text_scroll = Scrollbar(frame)
-text_scroll.pack(side=RIGHT,fill = Y)
+Find = Button(frame, text ='Find') 
+Find.pack(side = LEFT) 
+  
+  
+Label(frame, text = "Replace With ").pack(side = LEFT) 
+  
+edit2 = Entry(frame) 
+edit2.pack(side = LEFT, fill = BOTH, expand = 1) 
+edit2.focus_set() 
+  
+replace = Button(frame, text = 'Replace')
+replace.pack(side = LEFT) 
+  
+frame.pack(side = TOP)  
 
-bottom_scroll = Scrollbar(frame,orient="horizontal")
-bottom_scroll.pack(side = BOTTOM,fill = X)
+text = Text(root)
 
-
-text = Text(frame,width=80,height=30,font=('Helvetica',14),selectbackground="grey",selectforeground='white',undo=True,yscrollcommand=text_scroll.set,wrap="none",xscrollcommand=bottom_scroll.set)
-
-
-#def find():
-#    n = 0
-#    s = simpledialog.askstring("Find","Enter the Word")
-#    all = text.get('1.0',END)
-#    for line in all:
-#        if line != None:
-#            if s in line:
-#                n = n + 1
-#                print("found %s in line  ",n)
-#                print(line)
-#            else:
-#                n = n + 1
-#                print('not found in ',n)
-#                print(line)
-#        else:
-#            n = n + 1
-#            pass
-    # HERE
+def find():  
+      
+    # remove tag 'found' from index 1 to END  
+    text.tag_remove('found', '1.0', END)  
+      
+    # returns to widget currently in focus  
+    s = edit.get() 
+      
+    if (s):  
+        idx = '1.0'
+        while 1:  
+            # searches for desried string from index 1  
+            idx = text.search(s, idx, nocase = 1,  
+                            stopindex = END) 
+              
+            if not idx: break
+              
+            # last index sum of current index and  
+            # length of text  
+            lastidx = '% s+% dc' % (idx, len(s)) 
+              
+  
+            # overwrite 'Found' at idx  
+            text.tag_add('found', idx, lastidx)  
+            idx = lastidx  
+  
+        # mark located string as red 
+          
+        text.tag_config('found', foreground ='red') 
+    edit.focus_set() 
+  
+def findNreplace():  
+      
+    # remove tag 'found' from index 1 to END  
+    text.tag_remove('found', '1.0', END)  
+      
+    # returns to widget currently in focus  
+    s = edit.get() 
+    r = edit2.get() 
+      
+    if (s and r):  
+        idx = '1.0'
+        while 1:  
+            # searches for desried string from index 1  
+            idx = text.search(s, idx, nocase = 1,  
+                            stopindex = END) 
+            print(idx) 
+            if not idx: break
+              
+            # last index sum of current index and  
+            # length of text  
+            lastidx = '% s+% dc' % (idx, len(s)) 
+  
+            text.delete(idx, lastidx) 
+            text.insert(idx, r) 
+  
+            lastidx = '% s+% dc' % (idx, len(r)) 
+              
+            # overwrite 'Found' at idx  
+            text.tag_add('found', idx, lastidx)  
+            idx = lastidx  
+  
+        # mark located string as red 
+        text.tag_config('found', foreground ='green', background = 'yellow') 
+    edit.focus_set() 
+  
+                  
+Find.config(command = find) 
+replace.config(command = findNreplace)
+  
 
 def version():
     messagebox.showinfo('version',ev)
@@ -132,16 +201,6 @@ edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+
 edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
 
-#global search_menu
-#search_menu = Menu(my_menu,tearoff=False)
-#my_menu.add_cascade(label = 'search',menu = search_menu)
-#search_menu.add_command(label = "find",command = find,accelerator="Ctrl+f")
-
-
-
-
-text_scroll.config(command= text.yview)
-bottom_scroll.config(command= text.xview)
 
 frame.pack(pady=5)
 text.pack()
