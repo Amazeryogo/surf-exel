@@ -5,7 +5,7 @@ from tkinter import messagebox,simpledialog
 import time
 
 global ev
-ev = 'surf-exel v4.1'
+ev = 'surf-exel v5.0'
 
 root = Tk()
 root.title('Surf-exel')
@@ -55,22 +55,22 @@ def find():
     s = edit.get() 
       
     if (s):  
-        idx = '1.0'
+        spyder = '1.0'
         while 1:  
             # searches for desried string from index 1  
-            idx = text.search(s, idx, nocase = 1,  
+            spyder = text.search(s, spyder, nocase = 1,  
                             stopindex = END) 
               
-            if not idx: break
+            if not spyder: break
               
             # last index sum of current index and  
             # length of text  
-            lastidx = '% s+% dc' % (idx, len(s)) 
+            lastspyder = '% s+% dc' % (spyder, len(s)) 
               
   
-            # overwrite 'Found' at idx  
-            text.tag_add('found', idx, lastidx)  
-            idx = lastidx  
+            # overwrite 'Found' at spyder  
+            text.tag_add('found', spyder, lastspyder)  
+            spyder = lastspyder  
   
         # mark located string as red 
           
@@ -87,26 +87,26 @@ def findNreplace():
     r = edit2.get() 
       
     if (s and r):  
-        idx = '1.0'
+        spyder = '1.0'
         while 1:  
             # searches for desried string from index 1  
-            idx = text.search(s, idx, nocase = 1,  
+            spyder = text.search(s, spyder, nocase = 1,  
                             stopindex = END) 
-            print(idx) 
-            if not idx: break
+            print(spyder) 
+            if not spyder: break
               
             # last index sum of current index and  
             # length of text  
-            lastidx = '% s+% dc' % (idx, len(s)) 
+            lastspyder = '% s+% dc' % (spyder, len(s)) 
   
-            text.delete(idx, lastidx) 
-            text.insert(idx, r) 
+            text.delete(spyder, lastspyder) 
+            text.insert(spyder, r) 
   
-            lastidx = '% s+% dc' % (idx, len(r)) 
+            lastspyder = '% s+% dc' % (spyder, len(r)) 
               
-            # overwrite 'Found' at idx  
-            text.tag_add('found', idx, lastidx)  
-            idx = lastidx  
+            # overwrite 'Found' at spyder  
+            text.tag_add('found', spyder, lastspyder)  
+            spyder = lastspyder  
   
         # mark located string as red 
         text.tag_config('found', foreground ='green', background = 'yellow') 
