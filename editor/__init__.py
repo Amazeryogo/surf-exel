@@ -5,7 +5,7 @@ from tkinter import messagebox,simpledialog
 import time
 
 global ev
-ev = 'surf-exel v5.0'
+ev = 'surf-exel v5.1.1'
 
 root = Tk()
 root.title('Surf-exel')
@@ -44,10 +44,9 @@ replace.pack(side = LEFT)
   
 frame.pack(side = TOP)  
 
-text = Text(root)
+text = Text(root,undo=True)
 
 def find():  
-      
     text.tag_remove('found', '1.0', END)    
     s = edit.get() 
       
