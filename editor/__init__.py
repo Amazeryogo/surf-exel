@@ -5,7 +5,7 @@ from tkinter import messagebox,simpledialog
 import time
 
 global ev
-ev = 'surf-exel v5.1.1'
+ev = 'surf-exel v5.1'
 
 root = Tk()
 root.title('Surf-exel')
@@ -115,7 +115,7 @@ def pastetext(e):
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
-def saveCurrentFile():
+def saveCurrentFile(o):
     global file_status
     if file_status:
         textr = open(file_status, 'w')
@@ -126,12 +126,12 @@ def saveCurrentFile():
         saveAsFile()
 
 
-def new_file():
+def new_file(o):
     text.delete("1.0",END)
     global file_status
     file_status = False
 
-def open_file():
+def open_file(o):
     text.delete("1.0",END)
     file = filedialog.askopenfilename(initialdir='',title="Open")
     if file:
