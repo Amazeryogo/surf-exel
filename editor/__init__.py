@@ -48,55 +48,35 @@ text = Text(root)
 
 def find():  
       
-    # remove tag 'found' from index 1 to END  
-    text.tag_remove('found', '1.0', END)  
-      
-    # returns to widget currently in focus  
+    text.tag_remove('found', '1.0', END)    
     s = edit.get() 
       
     if (s):  
         spyder = '1.0'
-        while 1:  
-            # searches for desried string from index 1  
+        while 1:   
             spyder = text.search(s, spyder, nocase = 1,  
                             stopindex = END) 
               
             if not spyder: break
-              
-            # last index sum of current index and  
-            # length of text  
             lastspyder = '% s+% dc' % (spyder, len(s)) 
               
-  
-            # overwrite 'Found' at spyder  
             text.tag_add('found', spyder, lastspyder)  
             spyder = lastspyder  
-  
-        # mark located string as red 
           
         text.tag_config('found', foreground ='red') 
     edit.focus_set() 
   
 def findNreplace():  
-      
-    # remove tag 'found' from index 1 to END  
-    text.tag_remove('found', '1.0', END)  
-      
-    # returns to widget currently in focus  
+    text.tag_remove('found', '1.0', END)    
     s = edit.get() 
-    r = edit2.get() 
-      
+    r = edit2.get()     
     if (s and r):  
         spyder = '1.0'
         while 1:  
-            # searches for desried string from index 1  
             spyder = text.search(s, spyder, nocase = 1,  
                             stopindex = END) 
             print(spyder) 
             if not spyder: break
-              
-            # last index sum of current index and  
-            # length of text  
             lastspyder = '% s+% dc' % (spyder, len(s)) 
   
             text.delete(spyder, lastspyder) 
@@ -104,11 +84,9 @@ def findNreplace():
   
             lastspyder = '% s+% dc' % (spyder, len(r)) 
               
-            # overwrite 'Found' at spyder  
             text.tag_add('found', spyder, lastspyder)  
             spyder = lastspyder  
   
-        # mark located string as red 
         text.tag_config('found', foreground ='green', background = 'yellow') 
     edit.focus_set() 
   
