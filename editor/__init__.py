@@ -87,7 +87,7 @@ Find.config(command = find)
 replace.config(command = findNreplace)
   
 
-def version():
+def version(o):
     messagebox.showinfo('version',ev)
 
 def cuttext(e):
