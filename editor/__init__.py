@@ -16,17 +16,10 @@ file_status = False
 global selected
 selected = False
 
-frame = Frame(root)
-
-Label(frame, text ='Find').pack(side = LEFT) 
-  
- 
+frame = Frame(root, background="grey")
+Label(frame, text ='Find').pack(side = LEFT)   
 edit = Entry(frame)  
-  
-  
-edit.pack(side = LEFT, fill = BOTH, expand = 1)  
-  
- 
+edit.pack(side = LEFT, fill = BOTH, expand = 1)   
 edit.focus_set()  
 
 Find = Button(frame, text ='Find') 
