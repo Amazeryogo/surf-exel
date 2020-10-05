@@ -3,7 +3,11 @@ import editor
 from editor import root
 from editor import *
 
-my_frame = Frame(root)
+
+root.mainloop()
+
+
+'''my_frame = Frame(root)
 my_frame.pack(pady=5)
 
 text_scroll = Scrollbar(my_frame)
@@ -46,5 +50,6 @@ root.bind('<Control-Key-x>',cuttext)
 root.bind('<Control-Key-c>',copytext)
 root.bind('<Control-Key-v>',pastetext)
 root.bind('<Control-Key-n>',new_file)
-root.bind('<Control-Key-s>',saveCurrentFile)
-root.mainloop()
+root.bind('<Control-Key-s>',saveCurrentFile)'''
+#cool , will remove this if it works well on a mac without this
+
