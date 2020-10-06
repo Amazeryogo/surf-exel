@@ -3,10 +3,10 @@ from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox,simpledialog
 import time
-from colourx import backgroundcolor as bc
-from colourx import forgroundcolor  as fc
-from colourx import back as b
-from colourx import fore as f
+from editor.colourx import backgroundcolor as bc
+from editor.colourx import forgroundcolor  as fc
+from editor.colourx import back as b
+from editor.colourx import fore as f
 
 
 
@@ -15,7 +15,7 @@ ev = 'surf-exel v5.2'
 
 root = Tk()
 root.title('Surf-exel')
-root.geometry("800x500")
+root.geometry("1000x1000")
 global file_status
 file_status = False
 
@@ -23,75 +23,75 @@ global selected
 selected = False
 
 frame = Frame(root, background= bc)
-Label(frame, text ='Find').pack(side = LEFT)   
-edit = Entry(frame)  
-edit.pack(side = LEFT, fill = BOTH, expand = 1)   
-edit.focus_set()  
+Label(frame, text ='Find').pack(side = LEFT)
+edit = Entry(frame)
+edit.pack(side = LEFT, fill = BOTH, expand = 1)
+edit.focus_set()
 
-Find = Button(frame, text ='Find') 
-Find.pack(side = LEFT) 
-  
-  
-Label(frame, text = "Replace With ").pack(side = LEFT) 
-  
-edit2 = Entry(frame) 
-edit2.pack(side = LEFT, fill = BOTH, expand = 1) 
-edit2.focus_set() 
-  
+Find = Button(frame, text ='Find')
+Find.pack(side = LEFT)
+
+
+Label(frame, text = "Replace With ").pack(side = LEFT)
+
+edit2 = Entry(frame)
+edit2.pack(side = LEFT, fill = BOTH, expand = 1)
+edit2.focus_set()
+
 replace = Button(frame, text = 'Replace')
-replace.pack(side = LEFT) 
-  
-frame.pack(side = TOP)  
+replace.pack(side = LEFT)
+
+frame.pack(side = TOP)
 
 text = Text(root,undo=True,foreground = f, background = b)
 
-def find():  
-    text.tag_remove('found', '1.0', END)    
-    s = edit.get() 
-      
-    if (s):  
+def find():
+    text.tag_remove('found', '1.0', END)
+    s = edit.get()
+
+    if (s):
         spyder = '1.0'
-        while 1:   
-            spyder = text.search(s, spyder, nocase = 1,  
-                            stopindex = END) 
-              
+        while 1:
+            spyder = text.search(s, spyder, nocase = 1,
+                            stopindex = END)
+
             if not spyder: break
-            lastspyder = '% s+% dc' % (spyder, len(s)) 
-              
-            text.tag_add('found', spyder, lastspyder)  
-            spyder = lastspyder  
-          
-        text.tag_config('found', foreground = fc) 
-    edit.focus_set() 
-  
-def findNreplace():  
-    text.tag_remove('found', '1.0', END)    
-    s = edit.get() 
-    r = edit2.get()     
-    if (s and r):  
+            lastspyder = '% s+% dc' % (spyder, len(s))
+
+            text.tag_add('found', spyder, lastspyder)
+            spyder = lastspyder
+
+        text.tag_config('found', foreground = fc)
+    edit.focus_set()
+
+def findNreplace():
+    text.tag_remove('found', '1.0', END)
+    s = edit.get()
+    r = edit2.get()
+    if (s and r):
         spyder = '1.0'
-        while 1:  
-            spyder = text.search(s, spyder, nocase = 1,  
-                            stopindex = END) 
-            print(spyder) 
+        while 1:
+            spyder = text.search(s, spyder, nocase = 1,
+                            stopindex = END)
+            print(spyder)
             if not spyder: break
-            lastspyder = '% s+% dc' % (spyder, len(s)) 
-  
-            text.delete(spyder, lastspyder) 
-            text.insert(spyder, r) 
-  
-            lastspyder = '% s+% dc' % (spyder, len(r)) 
-              
-            text.tag_add('found', spyder, lastspyder)  
-            spyder = lastspyder  
-  
-        text.tag_config('found', foreground = fc, background = bc) 
-    edit.focus_set() 
-  
-                  
-Find.config(command = find) 
+            lastspyder = '% s+% dc' % (spyder, len(s))
+
+            text.delete(spyder, lastspyder)
+            text.insert(spyder, r)
+
+            lastspyder = '% s+% dc' % (spyder, len(r))
+
+            text.tag_add('found', spyder, lastspyder)
+            spyder = lastspyder
+
+        text.tag_config('found', foreground = fc, background = bc)
+    edit.focus_set()
+
+
+Find.config(command = find)
 replace.config(command = findNreplace)
-  
+
 
 def version(o):
     messagebox.showinfo('version',ev)
