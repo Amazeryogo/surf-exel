@@ -5,6 +5,10 @@ from tkinter import messagebox,simpledialog
 import time
 from colourx import backgroundcolor as bc
 from colourx import forgroundcolor  as fc
+from colourx import back as b
+from colourx import fore as f
+
+
 
 global ev
 ev = 'surf-exel v5.2'
@@ -39,7 +43,7 @@ replace.pack(side = LEFT)
   
 frame.pack(side = TOP)  
 
-text = Text(root,undo=True)
+text = Text(root,undo=True,foreground = f, background = b)
 
 def find():  
     text.tag_remove('found', '1.0', END)    

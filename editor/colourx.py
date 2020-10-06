@@ -6,3 +6,11 @@ forgroundcolor = 'white'
 
 
 ''' note that these are used only when you use find or replace or both '''
+
+
+
+# this is for the colour of the text box
+
+back = 'black'
+
+fore = 'white'
