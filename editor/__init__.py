@@ -15,7 +15,7 @@ ev = 'surf-exel v5.2'
 
 root = Tk()
 root.title('Surf-exel')
-root.geometry("1000x1000")
+root.geometry("800x600")
 global file_status
 file_status = False
 
