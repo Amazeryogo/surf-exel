@@ -3,9 +3,11 @@ from tkinter import filedialog
 from tkinter import font
 from tkinter import messagebox,simpledialog
 import time
+from colourx import backgroundcolor as bc
+from colourx import forgroundcolor  as fc
 
 global ev
-ev = 'surf-exel v5.1'
+ev = 'surf-exel v5.2'
 
 root = Tk()
 root.title('Surf-exel')
@@ -16,7 +18,7 @@ file_status = False
 global selected
 selected = False
 
-frame = Frame(root, background="grey")
+frame = Frame(root, background= bc)
 Label(frame, text ='Find').pack(side = LEFT)   
 edit = Entry(frame)  
 edit.pack(side = LEFT, fill = BOTH, expand = 1)   
@@ -55,7 +57,7 @@ def find():
             text.tag_add('found', spyder, lastspyder)  
             spyder = lastspyder  
           
-        text.tag_config('found', foreground ='red') 
+        text.tag_config('found', foreground = fc) 
     edit.focus_set() 
   
 def findNreplace():  
@@ -79,7 +81,7 @@ def findNreplace():
             text.tag_add('found', spyder, lastspyder)  
             spyder = lastspyder  
   
-        text.tag_config('found', foreground ='green', background = 'yellow') 
+        text.tag_config('found', foreground = fc, background = bc) 
     edit.focus_set() 
   
                   
@@ -149,7 +151,7 @@ root.config(menu=my_menu)
 global about_menu
 about_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='About',menu=about_menu)
-about_menu.add_command(label = "Version",command = version,accelerator="Ctrl+q")
+about_menu.add_command(label = "Version",command = version('o'),accelerator="Ctrl+q")
 
 
 global file_menu
