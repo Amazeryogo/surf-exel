@@ -43,7 +43,7 @@ replace.pack(side = LEFT)
 
 frame.pack(side = TOP)
 
-text = Text(root,undo=True,foreground = f, background = b)
+text = Text(root,undo=True,foreground = f, background = b,height= 20)
 
 def find():
     text.tag_remove('found', '1.0', END)
