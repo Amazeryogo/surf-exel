@@ -108,13 +108,6 @@ def tsat():
     tts = gTTS(goat)
     tts.save('texttospeech.mp3')    
 
-
-
-
-
-
-
-
 def version(o):
     messagebox.showinfo('version',ev)
 
