@@ -7,11 +7,14 @@ from editor.colourx import backgroundcolor as bc
 from editor.colourx import forgroundcolor  as fc
 from editor.colourx import back as b
 from editor.colourx import fore as f
+from gtts import gTTS
+#import vlc
+import playsound
 
 
 
 global ev
-ev = 'surf-exel v5.2'
+ev = 'surf-exel v5.3'
 
 root = Tk()
 root.title('Surf-exel')
@@ -44,6 +47,13 @@ replace.pack(side = LEFT)
 frame.pack(side = TOP)
 
 text = Text(root,undo=True,foreground = f, background = b,height= 20)
+
+def tsversion():
+    tts = gTTS('version 5.3')
+    tts.save('version.mp3')
+    p = playsound.playsound('version.mp3')
+    p.play
+
 
 def find():
     text.tag_remove('found', '1.0', END)
@@ -91,6 +101,18 @@ def findNreplace():
 
 Find.config(command = find)
 replace.config(command = findNreplace)
+
+
+def tsat():
+    goat = text.get('1.0',END)
+    tts = gTTS(goat)
+    tts.save('texttospeech.mp3')    
+
+
+
+
+
+
 
 
 def version(o):
@@ -156,11 +178,13 @@ global about_menu
 about_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='About',menu=about_menu)
 about_menu.add_command(label = "Version",command = version('o'),accelerator="Ctrl+q")
+about_menu.add_command(label='Text-to-speech Version',command = tsversion)
 
 
 global file_menu
 file_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='File',menu=file_menu)
+file_menu.add_command(label="text-to-speech-contents",command=tsat)
 file_menu.add_command(label = "Open",command = open_file,accelerator="Ctrl+o")
 file_menu.add_command(label = "Save", command = saveCurrentFile,accelerator="Ctrl+s")
 file_menu.add_command(label = "Save as",command = saveAsFile)
