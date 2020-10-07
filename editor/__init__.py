@@ -8,10 +8,7 @@ from editor.colourx import forgroundcolor  as fc
 from editor.colourx import back as b
 from editor.colourx import fore as f
 from gtts import gTTS
-#import vlc
 import playsound
-
-
 
 global ev
 ev = 'surf-exel v5.3'
