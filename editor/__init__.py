@@ -68,7 +68,7 @@ def find():
             text.tag_add('found', spyder, lastspyder)
             spyder = lastspyder
 
-        text.tag_config('found', foreground = fc)
+        text.tag_config('found', foreground = "red")
     edit.focus_set()
 
 def findNreplace():
@@ -108,7 +108,7 @@ def tsat():
     o.play
 
 
-def version(o):
+def version():
     messagebox.showinfo('version',ev)
 
 def cuttext(e):
