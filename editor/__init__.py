@@ -9,6 +9,7 @@ from editor.colourx import back as b
 from editor.colourx import fore as f
 from gtts import gTTS
 import playsound
+import re
 
 global ev
 ev = 'surf-exel v5.3'
@@ -103,7 +104,7 @@ replace.config(command = findNreplace)
 def tsat():
     goat = text.get('1.0',END)
     tts = gTTS(goat)
-    tts.save('texttospeech.mp3')    
+    tts.save('texttospeech.mp3')
     o = playsound.playsound('texttospeech.mp3')
     o.play
 
