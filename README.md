@@ -9,6 +9,8 @@ It is Inspired by ed, a GNU line Editor.<br/>
 such as Raspberry pi <br/>
 
 
+It has a Graphical User interface , making it a real text editor.
+It also features TTS (text-to-speech) to allow the user to hear what he has written (starting from v5.3)
 
 ## Supported Platforms:
 ## Linux:
@@ -23,7 +25,7 @@ such as Raspberry pi <br/>
 ### Windows 10 and Windows IoT
 
 
-It has a Graphical User interface , making it a real text editor.
+
 
 ### Note: 
 ### 1)From v5.3 Onwards , Windows 7 is not officially supported, though you can still run older versions(before v5.2) on Windows7 
