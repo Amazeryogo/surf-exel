@@ -47,16 +47,15 @@ frame.pack(side = TOP)
 text = Text(root,undo=True,foreground = f, background = b,height= 20)
 
 def tsversion():
-    tts = gTTS('version 5.3')
+    tts = gTTS('version 5.4')
     tts.save('version.mp3')
-    p = playsound.playsound('version.mp3')
-    p.play
+    playsound.playsound('version.mp3')
+    
 
 
 def find():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
-
     if (s):
         spyder = '1.0'
         while 1:
@@ -105,8 +104,7 @@ def tsat():
     goat = text.get('1.0',END)
     tts = gTTS(goat)
     tts.save('texttospeech.mp3')
-    o = playsound.playsound('texttospeech.mp3')
-    o.play
+    playsound.playsound('texttospeech.mp3')
 
 
 def version():
@@ -139,7 +137,6 @@ def saveCurrentFile(o):
         root.title('file saved')
     else:
         saveAsFile()
-
 
 def new_file(o):
     text.delete("1.0",END)
