@@ -128,7 +128,7 @@ def pastetext(e):
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
-def saveCurrentFile(o):
+def saveCurrentFile():
     global file_status
     if file_status:
         textr = open(file_status, 'w')
@@ -138,12 +138,12 @@ def saveCurrentFile(o):
     else:
         saveAsFile()
 
-def new_file(o):
+def new_file():
     text.delete("1.0",END)
     global file_status
     file_status = False
 
-def open_file(o):
+def open_file():
     text.delete("1.0",END)
     file = filedialog.askopenfilename(initialdir='',title="Open")
     if file:
