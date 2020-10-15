@@ -14,7 +14,7 @@ It also features TTS (text-to-speech) to allow the user to hear what he has writ
 
 ## Supported Platforms:
 ## Linux:
-### All linux distroes are supported as long as python/tkinter and all the dependencies are supported by the distro
+### All linux distros are supported as long as python/tkinter and all the dependencies are supported by the distro
 
 
 ## MacOS:
