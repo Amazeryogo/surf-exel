@@ -12,7 +12,7 @@ import playsound
 import re
 
 global ev
-ev = 'surf-exel v5.3'
+ev = 'surf-exel v5.4'
 
 root = Tk()
 root.title('Surf-exel')
@@ -39,8 +39,8 @@ edit2 = Entry(frame)
 edit2.pack(side = LEFT, fill = BOTH, expand = 1)
 edit2.focus_set()
 
-replace = Button(frame, text = 'Replace')
-replace.pack(side = LEFT)
+replaceall = Button(frame, text = 'Replace All')
+replaceall.pack(side = LEFT)
 
 frame.pack(side = TOP)
 
@@ -97,7 +97,7 @@ def findNreplace():
 
 
 Find.config(command = find)
-replace.config(command = findNreplace)
+replaceall.config(command = findNreplace)
 
 
 def tsat():
