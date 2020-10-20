@@ -22,7 +22,7 @@ It also features TTS (text-to-speech) to allow the user to hear what he has writ
 
 
 ## Windows:
-### Windows 10 and Windows IoT
+### Windows 10 
 
 
 
