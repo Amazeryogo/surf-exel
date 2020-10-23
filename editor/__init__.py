@@ -183,9 +183,9 @@ file_menu.add_command(label = "New file",command = new_file,accelerator="Ctrl+n"
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
-edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False), accelerator="Ctrl+x")
-edit_menu.add_command(label = "Copy", command = lambda: copytext(False),accelerator="Ctrl+c")
-edit_menu.add_command(label = "Paste",command = lambda: pastetext(False),accelerator="Ctrl+v")
+edit_menu.add_command(label = "Cut" , command = lambda: cuttext, accelerator="Ctrl+x")
+edit_menu.add_command(label = "Copy", command = lambda: copytext,accelerator="Ctrl+c")
+edit_menu.add_command(label = "Paste",command = lambda: pastetext,accelerator="Ctrl+v")
 edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+y")
 edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
