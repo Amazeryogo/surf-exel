@@ -107,7 +107,7 @@ def tsat():
     playsound.playsound('texttospeech.mp3')
 
 
-def version():
+def version(e):
     messagebox.showinfo('version',ev)
 
 def cuttext(e):
