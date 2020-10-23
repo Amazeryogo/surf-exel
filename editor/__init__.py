@@ -33,8 +33,6 @@ Find = Button(frame, text ='Find')
 Find.pack(side = LEFT)
 
 
-Label(frame, text = "Replace With ").pack(side = LEFT)
-
 edit2 = Entry(frame)
 edit2.pack(side = LEFT, fill = BOTH, expand = 1)
 edit2.focus_set()
@@ -50,7 +48,7 @@ def tsversion():
     tts = gTTS('version 5.4')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
-    
+
 
 # we need to make this BETTER!
 def find():
@@ -110,12 +108,12 @@ def tsat():
 def version():
     messagebox.showinfo('version',ev)
 
-def cuttext(e):
+def cuttext():
     global selected
     if text.selection_get():
         selected = text.selection_get()
         text.delete("sel.first","sel.last")
-def copytext(e):
+def copytext():
     if e:
         selected = root.clipboard_get()
 
@@ -123,7 +121,7 @@ def copytext(e):
         selected = text.selection_get()
         root.clipboard_clear()
         root.clipboard_append(selected)
-def pastetext(e):
+def pastetext():
     if selected:
         pos = text.index(INSERT)
         text.insert(pos,selected)
