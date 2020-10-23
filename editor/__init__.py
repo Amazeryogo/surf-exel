@@ -33,6 +33,8 @@ Find = Button(frame, text ='Find')
 Find.pack(side = LEFT)
 
 
+Label(frame, text = "Replace With ").pack(side = LEFT)
+
 edit2 = Entry(frame)
 edit2.pack(side = LEFT, fill = BOTH, expand = 1)
 edit2.focus_set()
@@ -48,7 +50,7 @@ def tsversion():
     tts = gTTS('version 5.4')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
-
+    
 
 # we need to make this BETTER!
 def find():
@@ -108,12 +110,12 @@ def tsat():
 def version():
     messagebox.showinfo('version',ev)
 
-def cuttext():
+def cuttext(e):
     global selected
     if text.selection_get():
         selected = text.selection_get()
         text.delete("sel.first","sel.last")
-def copytext():
+def copytext(e):
     if e:
         selected = root.clipboard_get()
 
@@ -121,12 +123,12 @@ def copytext():
         selected = text.selection_get()
         root.clipboard_clear()
         root.clipboard_append(selected)
-def pastetext():
+def pastetext(e):
     if selected:
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
-def saveCurrentFile(e):
+def saveCurrentFile():
     global file_status
     if file_status:
         textr = open(file_status, 'w')
@@ -136,12 +138,12 @@ def saveCurrentFile(e):
     else:
         saveAsFile()
 
-def new_file(e):
+def new_file():
     text.delete("1.0",END)
     global file_status
     file_status = False
 
-def open_file(e):
+def open_file():
     text.delete("1.0",END)
     file = filedialog.askopenfilename(initialdir='',title="Open")
     if file:
@@ -151,7 +153,7 @@ def open_file(e):
     spyders = file.read()
     text.insert(END,spyders)
 
-def saveAsFile(e):
+def saveAsFile():
     textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="Save")
     textr = open(textr, 'w')
     textr.write(text.get(1.0,END))
@@ -183,9 +185,9 @@ file_menu.add_command(label = "New file",command = new_file,accelerator="Ctrl+n"
 global edit_menu
 edit_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='Edit',menu=edit_menu)
-edit_menu.add_command(label = "Cut" , command = lambda: cuttext, accelerator="Ctrl+x")
-edit_menu.add_command(label = "Copy", command = lambda: copytext,accelerator="Ctrl+c")
-edit_menu.add_command(label = "Paste",command = lambda: pastetext,accelerator="Ctrl+v")
+edit_menu.add_command(label = "Cut" , command = lambda: cuttext(False), accelerator="Ctrl+x")
+edit_menu.add_command(label = "Copy", command = lambda: copytext(False),accelerator="Ctrl+c")
+edit_menu.add_command(label = "Paste",command = lambda: pastetext(False),accelerator="Ctrl+v")
 edit_menu.add_command(label = "Redo",command = text.edit_redo,accelerator="Ctrl+y")
 edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+z")
 
