@@ -126,7 +126,7 @@ def pastetext():
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
-def saveCurrentFile():
+def saveCurrentFile(e):
     global file_status
     if file_status:
         textr = open(file_status, 'w')
@@ -136,12 +136,12 @@ def saveCurrentFile():
     else:
         saveAsFile()
 
-def new_file():
+def new_file(e):
     text.delete("1.0",END)
     global file_status
     file_status = False
 
-def open_file():
+def open_file(e):
     text.delete("1.0",END)
     file = filedialog.askopenfilename(initialdir='',title="Open")
     if file:
@@ -151,7 +151,7 @@ def open_file():
     spyders = file.read()
     text.insert(END,spyders)
 
-def saveAsFile():
+def saveAsFile(e):
     textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="Save")
     textr = open(textr, 'w')
     textr.write(text.get(1.0,END))
