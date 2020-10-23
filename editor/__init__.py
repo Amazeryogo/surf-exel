@@ -105,7 +105,7 @@ def tsat():
     playsound.playsound('texttospeech.mp3')
 
 
-def version():
+def version(e):
     messagebox.showinfo('version',ev)
 
 def cuttext():
@@ -151,7 +151,7 @@ def open_file(e):
     spyders = file.read()
     text.insert(END,spyders)
 
-def saveAsFile(e):
+def saveAsFile():
     textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="Save")
     textr = open(textr, 'w')
     textr.write(text.get(1.0,END))
