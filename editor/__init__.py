@@ -60,7 +60,6 @@ def tsversion():
     playsound.playsound('version.mp3')
     
 
-# we need to make this BETTER!
 def find():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
