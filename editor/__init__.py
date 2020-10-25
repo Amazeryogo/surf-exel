@@ -59,8 +59,7 @@ def find():
     if (s):
         spyder = '1.0'
         while 1:
-            spyder = text.search(s, spyder, nocase = 1,
-                            stopindex = END)
+            spyder = text.search(s, spyder, stopindex=END,regexp=True)
 
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
@@ -78,8 +77,8 @@ def findNreplace():
     if (s and r):
         spyder = '1.0'
         while 1:
-            spyder = text.search(s, spyder, nocase = 1,
-                            stopindex = END)
+            spyder = text.search(s, spyder, stopindex=END,regexp=True)
+            
             print(spyder)
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
