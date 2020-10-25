@@ -14,7 +14,7 @@ import os
 
 global ev
 ev = 'surf-exel v5.5'
-base_title = "Surf-excel"
+base_title = "Surf-exel"
 
 root = Tk()
 root.title(base_title)
