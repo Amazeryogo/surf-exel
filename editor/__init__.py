@@ -10,6 +10,7 @@ from editor.colourx import fore as f
 from gtts import gTTS
 import playsound
 import re
+import os
 
 global ev
 ev = 'surf-exel v5.4'
@@ -45,6 +46,13 @@ replaceall.pack(side = LEFT)
 frame.pack(side = TOP)
 
 text = Text(root,undo=True,foreground = f, background = b,height= 20)
+
+
+def update():
+    messagebox.showinfo('update','updating your surf-exel , please check the terminal to see the changes')
+    os.system('sh update.sh')
+    messagebox.showinfo('updated','updated , please relaunch surf-exel')
+    quit()
 
 def tsversion():
     tts = gTTS('version 5.4')
@@ -169,6 +177,7 @@ about_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='About',menu=about_menu)
 about_menu.add_command(label = "Version",command = version('e'))
 about_menu.add_command(label='Text-to-speech Version',command = tsversion)
+about_menu.add_command(label = "Update", command = update)
 
 
 global file_menu
