@@ -33,9 +33,6 @@ edit.focus_set()
 Find = Button(frame, text ='Find')
 Find.pack(side = LEFT)
 
-
-Label(frame, text = "Replace With ").pack(side = LEFT)
-
 edit2 = Entry(frame)
 edit2.pack(side = LEFT, fill = BOTH, expand = 1)
 edit2.focus_set()
