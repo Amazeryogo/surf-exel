@@ -78,7 +78,7 @@ def findNreplace():
         spyder = '1.0'
         while 1:
             spyder = text.search(s, spyder, stopindex=END,regexp=True)
-            
+
             print(spyder)
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
@@ -167,7 +167,7 @@ root.config(menu=my_menu)
 global about_menu
 about_menu = Menu(my_menu,tearoff=False)
 my_menu.add_cascade(label='About',menu=about_menu)
-about_menu.add_command(label = "Version",command = version)
+about_menu.add_command(label = "Version",command = version('e'))
 about_menu.add_command(label='Text-to-speech Version',command = tsversion)
 
 
