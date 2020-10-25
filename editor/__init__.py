@@ -13,7 +13,7 @@ import re
 import os
 
 global ev
-ev = 'surf-exel v5.4'
+ev = 'surf-exel v5.5'
 
 root = Tk()
 root.title('Surf-exel')
@@ -55,7 +55,7 @@ def update():
     quit()
 
 def tsversion():
-    tts = gTTS('version 5.4')
+    tts = gTTS('version 5.5')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
     
