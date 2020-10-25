@@ -42,7 +42,9 @@ replaceall.pack(side = LEFT)
 
 frame.pack(side = TOP)
 
-text = Text(root,undo=True,foreground = f, background = b,height= 20)
+text = Text(root,undo=True,foreground = f, background = b)
+text.config(insertbackground='white')
+
 
 
 def update():
@@ -202,7 +204,7 @@ edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+
 
 
 frame.pack(pady=5)
-text.pack()
+text.pack(fill=BOTH, side=BOTTOM, expand=True)
 root.bind('<Control-Key-x>',cuttext)
 root.bind('<Control-Key-c>',copytext)
 root.bind('<Control-Key-v>',pastetext)
