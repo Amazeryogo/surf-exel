@@ -121,6 +121,8 @@ def cuttext(e):
     if text.selection_get():
         selected = text.selection_get()
         text.delete("sel.first","sel.last")
+
+        
 def copytext(e):
     if e:
         selected = root.clipboard_get()
@@ -129,6 +131,8 @@ def copytext(e):
         selected = text.selection_get()
         root.clipboard_clear()
         root.clipboard_append(selected)
+
+
 def pastetext(e):
     if selected:
         pos = text.index(INSERT)
