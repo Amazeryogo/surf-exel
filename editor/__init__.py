@@ -14,9 +14,10 @@ import os
 
 global ev
 ev = 'surf-exel v5.5'
+base_title = "Surf-excel"
 
 root = Tk()
-root.title('Surf-exel')
+root.title(base_title)
 root.geometry("600x400")
 global file_status
 file_status = False
@@ -115,11 +116,17 @@ def tsat():
 def version(e):
     messagebox.showinfo('version',ev)
 
+def select_all(event):
+    text.tag_add(SEL, "1.0", END)
+    text.mark_set(INSERT, "1.0")
+    text.see(INSERT)
+    return 'break'
+
 def cuttext(e):
     global selected
     if text.selection_get():
         selected = text.selection_get()
-        text.delete("sel.first","sel.last")
+        text.delete("sel.first", "sel.last")
 
         
 def copytext(e):
@@ -137,20 +144,30 @@ def pastetext(e):
         pos = text.index(INSERT)
         text.insert(pos,selected)
 
+def saveCurrentFile_wrapper(args):
+    saveCurrentFile()
+
 def saveCurrentFile():
     global file_status
     if file_status:
         textr = open(file_status, 'w')
         textr.write(text.get(1.0,END))
         textr.close()
-        root.title('file saved')
+        root.title(textr.name)
     else:
         saveAsFile()
+
+def new_file_wrapper(args):
+    new_file()
 
 def new_file():
     text.delete("1.0",END)
     global file_status
     file_status = False
+    root.title(base_title)
+
+def open_file_wrapper(args):
+    open_file()
 
 def open_file():
     text.delete("1.0",END)
@@ -160,12 +177,14 @@ def open_file():
         file_status = file
     file = open(file, mode='r')
     spyders = file.read()
+    root.title(file.name)
     text.insert(END,spyders)
 
 def saveAsFile():
     textr = filedialog.asksaveasfilename(defaultextension=".txt",initialdir='',title="Save")
     textr = open(textr, 'w')
     textr.write(text.get(1.0,END))
+    root.title(textr.name)
     textr.close()
 
 
@@ -205,12 +224,12 @@ edit_menu.add_command(label = "Undo",command = text.edit_undo,accelerator="Ctrl+
 
 frame.pack(pady=5)
 text.pack(fill=BOTH, side=BOTTOM, expand=True)
+root.bind('<Control-Key-a>', select_all)
 root.bind('<Control-Key-x>',cuttext)
 root.bind('<Control-Key-c>',copytext)
 root.bind('<Control-Key-v>',pastetext)
-root.bind('<Control-Key-n>',new_file)
-root.bind('<Control-Key-s>',saveCurrentFile)
+root.bind('<Control-Key-n>',new_file_wrapper)
+root.bind('<Control-Key-s>',saveCurrentFile_wrapper)
 root.bind('<Control-Key-q>',version)
-root.bind('<Control-Key-o>',open_file)
-root.bind('<Control-Key-n>',new_file)
+root.bind('<Control-Key-o>',open_file_wrapper)
 root.mainloop()
