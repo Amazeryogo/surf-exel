@@ -8,7 +8,7 @@ The non-GUI version was inspired by ed , a simple GNU text editor.
 
 from V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
 
-# How fast do it get updated ?
+# How fast does it get updated ?
 
 A new version of surf-exel is released in the time space of 18 hours to 18 days.
 
