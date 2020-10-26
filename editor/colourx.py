@@ -14,3 +14,5 @@ forgroundcolor = 'white'
 back = 'black'
 
 fore = 'white'
+
+size = 32

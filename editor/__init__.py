@@ -7,6 +7,7 @@ from editor.colourx import backgroundcolor as bc
 from editor.colourx import forgroundcolor  as fc
 from editor.colourx import back as b
 from editor.colourx import fore as f
+from editor.colourx import size
 from gtts import gTTS
 import playsound
 import re
@@ -43,7 +44,7 @@ replaceall.pack(side = LEFT)
 
 frame.pack(side = TOP)
 
-text = Text(root,undo=True,foreground = f, background = b)
+text = Text(root,undo=True,foreground = f, background = b,font=("Helvetica", size))
 text.config(insertbackground='white')
 
 
