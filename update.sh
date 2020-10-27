@@ -4,4 +4,4 @@ git init
 
 
 
-git fetch --all && git checkout --force "origin/master --release "
+git fetch --all && git checkout --force "origin/master"
