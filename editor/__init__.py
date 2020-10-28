@@ -77,7 +77,7 @@ def find():
     edit.focus_set()
 
 
-def findNreplace():
+def replacex():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
     r = edit2.get()
@@ -103,7 +103,7 @@ def findNreplace():
 
 
 Find.config(command=find)
-replaceall.config(command=findNreplace)
+replaceall.config(command=replacex)
 
 
 def tsat():
@@ -237,3 +237,7 @@ root.bind('<Control-Key-s>', saveCurrentFile_wrapper)
 root.bind('<Control-Key-q>', version)
 root.bind('<Control-Key-o>', open_file_wrapper)
 root.mainloop()
+
+# Written in pycharm on a free open source license, Thanks @Jetbrains!
+#  https://www.jetbrains.com/?from=surf-exel
+# - Amazeryogo
