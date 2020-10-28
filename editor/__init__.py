@@ -226,6 +226,7 @@ edit_menu.add_command(label="Paste", command=lambda: pastetext(False), accelerat
 edit_menu.add_command(label="Redo", command=text.edit_redo, accelerator="Ctrl+y")
 edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z")
 
+
 frame.pack(pady=5)
 text.pack(fill=BOTH, side=BOTTOM, expand=True)
 root.bind('<Control-Key-a>', select_all)

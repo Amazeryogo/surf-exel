@@ -15,4 +15,4 @@ back = 'black'
 
 fore = 'white'
 
-size = 32
+size = 16

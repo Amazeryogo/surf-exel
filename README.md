@@ -21,4 +21,4 @@ Yes, Absolutely , All contributions are welcome and accepted! (As long as they m
 and Yes , All PR contributions are counted in the Hacktoberfest.
 
 # Can my computer run it?
-see the supportedplatforms.md to find out if your computer can run surf-exel.
+see the supportedplatforms.md in docs to find out if your computer can run surf-exel.
