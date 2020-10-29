@@ -23,3 +23,5 @@ See the supportedplatforms.md in docs to find out if your computer can run surf-
 # Update Column
 7th October: From V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
 
+# NOTE 
+Surf-exel may not work on Microsoft Windows , if thats the case, please try running main.py only and not building it using run.sh , sorry for the trouble. 
