@@ -213,7 +213,6 @@ about_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label='About', menu=about_menu)
 about_menu.add_command(label="Version", command=version('e'))
 about_menu.add_command(label='Text-to-speech Version', command=tsversion)
-about_menu.add_command(label="Update", command=update)
 
 global file_menu
 file_menu = Menu(menu, tearoff=False)
