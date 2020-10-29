@@ -12,9 +12,6 @@ from V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to k
 
 A new version of surf-exel is released in the time space of 18 hours to 18 days.
 
-But you still have to download the latest version manually (on all platforms).
- We are going to fix it in v5.5.
-
 # Can I contribute in it? Will a PR be counted in the Hacktoberfest?
 Yes, Absolutely , All contributions are welcome and accepted! (As long as they make sense to be added)
 
@@ -22,3 +19,6 @@ and Yes , All PR contributions are counted in the Hacktoberfest.
 
 # Can my computer run it?
 see the supportedplatforms.md in docs to find out if your computer can run surf-exel.
+
+# Update Column
+Now you can update it in the application itself.
