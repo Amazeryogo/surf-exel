@@ -59,6 +59,14 @@ def tsversion():
     playsound.playsound('version.mp3')
 
 
+def destroy():
+    file = filedialog.askopenfilename(initialdir='', title="Open")
+    if file:
+        with open(file, 'w+') as f:
+            f.truncate()
+            f.close()
+            messagebox.showinfo('Done', "destroyed successfully")
+
 def find():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
@@ -215,6 +223,7 @@ file_menu.add_command(label="Open", command=open_file, accelerator="Ctrl+o")
 file_menu.add_command(label="Save", command=saveCurrentFile, accelerator="Ctrl+s")
 file_menu.add_command(label="Save as", command=saveAsFile)
 file_menu.add_command(label="New file", command=new_file, accelerator="Ctrl+n")
+file_menu.add_command(label="Destroy", command=destroy)
 
 global edit_menu
 edit_menu = Menu(menu, tearoff=False)
