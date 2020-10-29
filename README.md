@@ -6,8 +6,6 @@ It is lightweight and easily customizable to suit your needs
 
 The non-GUI version was inspired by ed , a simple GNU text editor.
 
-from V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
-
 # How fast does it get updated ?
 
 A new version of surf-exel is released in the time space of 18 hours to 18 days.
@@ -18,7 +16,9 @@ Yes, Absolutely , All contributions are welcome and accepted! (As long as they m
 and Yes , All PR contributions are counted in the Hacktoberfest.
 
 # Can my computer run it?
-see the supportedplatforms.md in docs to find out if your computer can run surf-exel.
+See the supportedplatforms.md in docs to find out if your computer can run surf-exel.
 
 # Update Column
-Now you can update it in the application itself.
+7th October: From V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
+
+25th October: Now you can update it in the application itself.
