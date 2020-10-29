@@ -76,7 +76,6 @@ def find():
         text.tag_config('found', foreground="red")
     edit.focus_set()
 
-
 def replacex():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
