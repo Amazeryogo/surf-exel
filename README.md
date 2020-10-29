@@ -10,6 +10,8 @@ The non-GUI version was inspired by ed , a simple GNU text editor.
 
 A new version of surf-exel is released in the time space of 18 hours to 18 days.
 
+You have to update it manually though 
+
 # Can I contribute in it? Will a PR be counted in the Hacktoberfest?
 Yes, Absolutely , All contributions are welcome and accepted! (As long as they make sense to be added)
 
@@ -21,4 +23,3 @@ See the supportedplatforms.md in docs to find out if your computer can run surf-
 # Update Column
 7th October: From V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
 
-25th October: Now you can update it in the application itself.
