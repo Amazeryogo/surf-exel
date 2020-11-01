@@ -24,8 +24,8 @@ See the supportedplatforms.md in docs to find out if your computer can run surf-
 ## Linux/mac/BSD/Unix
 1) Download the source code by clicking the .zip file of the latest release 
 2) Navigate to it using the cd command (it will most probably be in your Downloads directory , so write `cd Downloads/surf-exel-version-number`
-3) write `sh run.sh`
-3.5) If it does not work, write `sudo sh run.sh`
+3) write `sh run.sh` or 
+If it does not work, write `sudo sh run.sh` (it will ask you for your password 
 4) It should compile it for you
 ### If you have compiled it previously , just go to the dist folder and double click main (in GUI) or if your pwd is in surf-exel write this `cd dist` and `./main`
 
