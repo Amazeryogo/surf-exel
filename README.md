@@ -20,6 +20,18 @@ and Yes , All PR contributions are counted in the Hacktoberfest.
 # Can my computer run it?
 See the supportedplatforms.md in docs to find out if your computer can run surf-exel.
 
+# How to run it ?
+## Linux/mac/BSD/Unix
+1) Download the source code by clicking the .zip file of the latest release 
+2) Navigate to it using the cd command (it will most probably be in your Downloads directory , so write `cd Downloads/surf-exel-version-number`
+3) write `sh run.sh` or 
+If it does not work, write `sudo sh run.sh` (it will ask you for your password 
+4) It should compile it for you
+### If you have compiled it previously , just go to the dist folder and double click main (in GUI) or if your pwd is in surf-exel write this `cd dist` and `./main`
+
+## Windows 
+please see the NOTE below (sorry for the trouble)
+
 # Update Column
 7th October: From V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
 
