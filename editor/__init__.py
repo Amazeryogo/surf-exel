@@ -1,3 +1,4 @@
+# Import all the stuff
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
@@ -11,25 +12,31 @@ import playsound
 import re
 import os
 
+# Version 
 global ev
 ev = 'surf-exel v5.6'
+# base title
 base_title = "Surf-exel"
 
+# the window 
 root = Tk()
 root.title(base_title)
 root.geometry("600x400")
 global file_status
 file_status = False
 
+# selected file
 global selected
 selected = False
 
+# Find label
 frame = Frame(root, background=bc)
 Label(frame, text='Find').pack(side=LEFT)
 edit = Entry(frame)
 edit.pack(side=LEFT, fill=BOTH, expand=1)
 edit.focus_set()
 
+# find search bar and button
 Find = Button(frame, text='Find')
 Find.pack(side=LEFT)
 
@@ -46,18 +53,13 @@ text = Text(root, undo=True, foreground=f, background=b, font=("Helvetica", size
 text.config(insertbackground='white')
 
 
-def update():
-    messagebox.showinfo('update', 'updating your surf-exel , please check the terminal to see the changes')
-    os.system('sh update.sh')
-    messagebox.showinfo('updated', 'updated , please relaunch surf-exel')
-    quit()
-
-
+# text-to-speech the version
 def tsversion():
     tts = gTTS('version 5.6')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
 
+#destroy file
 
 def destroy():
     file = filedialog.askopenfilename(initialdir='', title="Open")
@@ -66,6 +68,8 @@ def destroy():
             f.truncate()
             f.close()
             messagebox.showinfo('Done', "destroyed successfully")
+
+# find in file
 
 def find():
     text.tag_remove('found', '1.0', END)
