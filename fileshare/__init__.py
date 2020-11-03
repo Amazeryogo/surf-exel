@@ -38,6 +38,12 @@ def recive():
     if IP == "127.0.0.1":
         if platform.system() == "Darwin":
             IP = os.system("ipconfig getifaddr")
+        elif platform.system() == "Linux":
+            IP = os.system("hostname -I")
+        else:
+            # WE WILL ADD SUPPORT FOR WINDOWS in the next commit of this file 
+            tkinter.messagebox.showinfo('PLATFORM NOT SUPPORTED', "PLATFORM NOT SUPPORTED")
+            
 
     print(IP)
     print(platform.system())
