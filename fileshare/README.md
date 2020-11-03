@@ -9,4 +9,6 @@ The reciver is given a code (local Ip address + : + Port ) and a randomly genera
 
 ONCE CONNECTED IT SENDS THE FILE.
 
-## CURRENTLY UNSTABLE! DON"T TRY TO USE IT ! 
+## CURRENTLY UNSTABLE! DON'T TRY TO USE IT ! 
+
+## AND I DIDN'T FINISH IT YET , SO... 
