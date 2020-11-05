@@ -22,7 +22,7 @@ See the supportedplatforms.md in docs to find out if your computer can run surf-
 
 # How to run it ?
 ## Linux/mac/BSD/Unix
-### PLEASE NOTE THAT SOME FEATURES(such as the upcoming peer-peer file sharing) MAY NOT WORK ON BSD.
+### PLEASE NOTE THAT SOME FEATURES MAY NOT WORK ON BSD.
 1) Download the source code by clicking the .zip file of the latest release 
 2) Navigate to it using the cd command (it will most probably be in your Downloads directory , so write `cd Downloads/surf-exel-version-number`
 3) write `sh run.sh` or 
