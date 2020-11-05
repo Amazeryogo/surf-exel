@@ -11,6 +11,7 @@ from gtts import gTTS
 import playsound
 import re
 import os
+import platform
 
 # Version 
 global ev
@@ -207,6 +208,11 @@ def saveAsFile():
     root.title(textr.name)
     textr.close()
 
+def terminal(e):
+    if platform.system() != 'Windows': 
+        os.system("bash terminal.sh")
+    else:
+        os.system("sh terminal.sh")
 
 global menu
 menu = Menu(root)
@@ -236,6 +242,10 @@ edit_menu.add_command(label="Copy", command=lambda: copytext(False), accelerator
 edit_menu.add_command(label="Paste", command=lambda: pastetext(False), accelerator="Ctrl+v")
 edit_menu.add_command(label="Redo", command=text.edit_redo, accelerator="Ctrl+y")
 edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z")
+
+global terminal_menu
+terminal_menu = Menu(menu, tearoff=False)
+menu.add_command(label="Terminal",menu=terminal_menu)
 
 
 frame.pack(pady=5)
