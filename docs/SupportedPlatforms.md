@@ -9,14 +9,13 @@ Because I develop it in Ubuntu :P
 ### Macos High Sierra and Upwards
 
 
-## Windows:
-### Windows 10 
+
 
 
 
 
 ### Note: 
-### 1)From v5.3 Onwards , Windows 7 is not officially supported, though you can still run older versions(before v5.2) on Windows7 
+### 1)From v5.7 Onwards , Windows is not officially supported, though you can still run older versions(before v5.7) on Windows  
 
 
 

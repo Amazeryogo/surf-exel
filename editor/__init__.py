@@ -19,7 +19,7 @@ terminalstatus = True
 
 # Version 
 global ev
-ev = 'surf-exel v5.6'
+ev = 'surf-exel v5.7'
 # base title
 base_title = "Surf-exel"
 
@@ -60,7 +60,7 @@ text.config(insertbackground='white')
 
 # text-to-speech the version
 def tsversion():
-    tts = gTTS('version 5.6')
+    tts = gTTS('version 5.7')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
 
@@ -219,6 +219,7 @@ def terminal(e):
         os.system("bash terminal.sh")
     else:
         os.system("sh terminal.sh")
+        quit()
 
 def set_true():
     global terminalstatus
