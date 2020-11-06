@@ -7,12 +7,15 @@ from editor.colourx import forgroundcolor  as fc
 from editor.colourx import back as b
 from editor.colourx import fore as f
 from editor.colourx import size
-from editor.tcommand import terminal as terminal
+#from editor.tcommand import terminal as terminal
 from gtts import gTTS
 import playsound
 import re
 import os
 import platform
+
+global terminalstatus
+terminalstatus = True
 
 # Version 
 global ev
@@ -210,6 +213,18 @@ def saveAsFile():
     textr.close()
 
 
+
+def terminal(e):
+    if platform.system() != 'Windows': 
+        os.system("bash terminal.sh")
+    else:
+        os.system("sh terminal.sh")
+
+def set_true():
+    global terminalstatus
+    terminalstatus = True
+    terminal("e")
+
 global menu
 menu = Menu(root)
 root.config(menu=menu)
@@ -242,7 +257,7 @@ edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z"
 global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label="Terminal",menu=terminal_menu)
-terminal_menu.add_command(label="Open Terminal",command=terminal('e'))
+terminal_menu.add_command(label="Open Terminal",command=set_true)
 
 
 frame.pack(pady=5)
