@@ -37,7 +37,7 @@ please see the NOTE below (sorry for the trouble)
 7th October: From V5.3 onwards , we have added GTTS (Google Text To Speech) to allow you to know the version of your surf-exel  and the contents of your text just by hearing it.
 
 # Prerequisites
-git 
+git, 
 xterm 
 
 # NOTE 
