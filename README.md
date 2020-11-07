@@ -40,7 +40,7 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 3) write `sh run.sh` or 
 If it does not work, write `sudo sh run.sh` (it will ask you for your password .
 4) It should compile it for you.
-### If you have compiled it previously , just go to the dist folder and double click main  or if your pwd in your terminal is in surf-exel write -  `cd dist` then write `./main`
+### If you have compiled it previously , just go to the dist folder and double click main  or if your pwd in your terminal is in surf-exel, write -  `cd dist` then write `./main`
 
 ## Windows 
 please see the NOTE above (sorry for the trouble).
