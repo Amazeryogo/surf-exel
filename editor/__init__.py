@@ -2,11 +2,11 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
-from editor.colourx import backgroundcolor as bc
-from editor.colourx import forgroundcolor  as fc
-from editor.colourx import back as b
-from editor.colourx import fore as f
-from editor.colourx import size
+from editor.settings import backgroundcolor as bc
+from editor.settings import forgroundcolor  as fc
+from editor.settings import back as b
+from editor.settings import fore as f
+from editor.settings import size
 #from editor.tcommand import terminal as terminal
 from gtts import gTTS
 import playsound
