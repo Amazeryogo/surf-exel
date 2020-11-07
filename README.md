@@ -35,7 +35,7 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 # How to run it ?
 ## Linux/mac/BSD/Unix
 ### PLEASE NOTE THAT SOME FEATURES MAY NOT WORK ON BSD.
-1) Download the source code by clicking the .zip file of the latest release. 
+1) Download the source code by clicking the .zip file of the latest release and unzip it. 
 2) Navigate to it using the cd command (it will most probably be in your Downloads. directory , so write `cd Downloads/surf-exel-version-number`.
 3) write `sh run.sh` or 
 If it does not work, write `sudo sh run.sh` (it will ask you for your password .
