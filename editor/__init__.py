@@ -216,9 +216,9 @@ def saveAsFile():
 
 def terminal(e):
     if platform.system() != 'Windows': 
-        os.system("bash terminal.sh")
+        os.system("python3 terminal.py")
     else:
-        os.system("sh terminal.sh")
+        os.system("python3 terminal.py")
         quit()
 
 def set_true():
