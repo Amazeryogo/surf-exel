@@ -9,12 +9,12 @@ gtts: pp3
 
 pls: pp3
 	pip3 install playsound
-	echo "done!" > pls
+	echo "done!" > $(CWD)/cache/pls
 
 pyi: pp3 
 	pip3 install pyinstaller
-	echo "done!" > pyi
+	echo "done!" > $(CWD)/cache/pyi
 
 pp3: 
-	echo "done!" > pp3
+	echo "done!" > $(CWD)/cache/pp3
 
