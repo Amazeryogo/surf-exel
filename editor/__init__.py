@@ -266,7 +266,7 @@ global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label="Terminal",menu=terminal_menu)
 terminal_menu.add_command(label="Open Terminal",command=set_true)
-terminal_menu.add_command(label="Close Terminal",command=hashbang)
+terminal_menu.add_command(label="Command",command=hashbang)
 
 
 frame.pack(pady=5)
