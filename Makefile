@@ -5,15 +5,15 @@ surf-exel: gtts pls pyi
 		
 gtts: pp3 
 	pip3 install gTTS
-	echo "done!" > gtts
+	echo "done!" > $(CWD)/.cache/gtts
 
 pls: pp3
 	pip3 install playsound
-	echo "done!" > $(CWD)/cache/pls
+	echo "done!" > $(CWD)/.cache/pls
 
 pyi: pp3 
 	pip3 install pyinstaller
-	echo "done!" > $(CWD)/cache/pyi
+	echo "done!" > $(CWD)/.cache/pyi
 
 pp3: 
 	echo "done!" > $(CWD)/cache/pp3
