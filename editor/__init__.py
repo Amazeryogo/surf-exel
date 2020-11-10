@@ -19,7 +19,7 @@ terminalstatus = True
 
 # Version 
 global ev
-ev = 'surf-exel v5.7'
+ev = 'surf-exel v5.8'
 # base title
 base_title = "Surf-exel"
 
@@ -60,7 +60,7 @@ text.config(insertbackground='white')
 
 # text-to-speech the version
 def tsversion():
-    tts = gTTS('version 5.7')
+    tts = gTTS('version 5.8')
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
 
