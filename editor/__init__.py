@@ -1,13 +1,12 @@
 # Import all the stuff
 from tkinter import *
-from tkinter import filedialog
+from tkinter import filedialog,simpledialog
 from tkinter import messagebox
 from editor.settings import backgroundcolor as bc
 from editor.settings import forgroundcolor  as fc
 from editor.settings import back as b
 from editor.settings import fore as f
 from editor.settings import size
-#from editor.tcommand import terminal as terminal
 from gtts import gTTS
 import playsound
 import re
@@ -157,6 +156,14 @@ def copytext(e):
         root.clipboard_append(selected)
 
 
+def hashbang():
+    x = simpledialog.askstring("One liner", "Enter your shell command")
+    Outputfileobject=os.popen(x)
+    Output=Outputfileobject.read()
+    Outputfileobject.close()
+    messagebox.showinfo('Output',Output)
+
+
 def pastetext(e):
     if selected:
         pos = text.index(INSERT)
@@ -259,6 +266,7 @@ global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label="Terminal",menu=terminal_menu)
 terminal_menu.add_command(label="Open Terminal",command=set_true)
+terminal_menu.add_command(label="Close Terminal",command=hashbang)
 
 
 frame.pack(pady=5)
