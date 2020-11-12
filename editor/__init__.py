@@ -7,6 +7,7 @@ from editor.settings import forgroundcolor  as fc
 from editor.settings import back as b
 from editor.settings import fore as f
 from editor.settings import size
+from editor.settings import font as fontx
 from gtts import gTTS
 import playsound
 import re
@@ -53,7 +54,7 @@ replaceall.pack(side=LEFT)
 
 frame.pack(side=TOP)
 
-text = Text(root, undo=True, foreground=f, background=b, font=("Helvetica", size))
+text = Text(root, undo=True, foreground=f, background=b, font=(fontx, size))
 text.config(insertbackground='white')
 
 
@@ -158,9 +159,9 @@ def copytext(e):
 
 def hashbang():
     x = simpledialog.askstring("One liner", "Enter your shell command")
-    Outputfileobject=os.popen(x)
-    Output=Outputfileobject.read()
-    Outputfileobject.close()
+    Outputfile=os.popen(x)
+    Output=Outputfile.read()
+    Outputfile.close()
     messagebox.showinfo('Output',Output)
 
 
@@ -193,7 +194,7 @@ def new_file():
     text.delete("1.0", END)
     global file_status
     file_status = False
-    root.title(base_title)
+    root.title("Untitled")
 
 
 def open_file_wrapper(args):
@@ -222,11 +223,7 @@ def saveAsFile():
 
 
 def terminal(e):
-    if platform.system() != 'Windows': 
         os.system("python3 terminal.py")
-    else:
-        os.system("python3 terminal.py")
-        quit()
 
 def set_true():
     global terminalstatus
@@ -241,7 +238,7 @@ global about_menu
 about_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label='About', menu=about_menu)
 about_menu.add_command(label="Version", command=version('e'))
-about_menu.add_command(label='Text-to-speech Version', command=tsversion)
+about_menu.add_command(label='TTS-Version', command=tsversion)
 
 global file_menu
 file_menu = Menu(menu, tearoff=False)
@@ -281,6 +278,6 @@ root.bind('<Control-Key-q>', version)
 root.bind('<Control-Key-o>', open_file_wrapper)
 root.mainloop()
 
-# Written in pycharm on a free open source license, Thanks @Jetbrains!
+# Written in pycharm on a open source license, Thanks @Jetbrains!
 #  https://www.jetbrains.com/?from=surf-exel
 # - Amazeryogo

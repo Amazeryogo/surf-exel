@@ -1,18 +1,18 @@
 backgroundcolor = 'grey'
-#This is the background color that is used when a word/text/paragraph is highlighted
+# This is the backgroundcolor when a word is highlighted
 
 forgroundcolor = 'white'
-# this the foreground color
+# This is the color of the letters when a word is highlighted
 
-
-''' note that these are used only when you use find or replace or both '''
-
-
-
-# this is for the colour of the text box
 
 back = 'black'
+# Background color of the text box 
 
 fore = 'white'
+# The color of the letters when a word is not highlighted
 
 size = 16
+# size of the letters
+
+font = "Helvetica"
+# The font
