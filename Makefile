@@ -1,5 +1,5 @@
 CWD = ${PWD}
-surf-exel: cache gtts pls pyi 
+surf-exel: gtts pls pyi 
 	pyinstaller --onefile --name surf-exel  main.py 
 	mv $(CWD)/dist/surf-exel $(CWD)/
 		
@@ -17,6 +17,3 @@ pyi: pp3
 
 pp3: 
 	echo "done!" > $(CWD)/.cache/pp3
-
-cache:
-	mkdir /.cache/
