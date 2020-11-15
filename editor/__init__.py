@@ -1,6 +1,4 @@
-# Import all the stuff
-from editor.importme import *
-
+from editor.importme install *
 global terminalstatus
 terminalstatus = True
 
@@ -109,7 +107,11 @@ Find.config(command=find)
 replaceall.config(command=replacex)
 
 
-
+def tsat():
+    goat = text.get('1.0', END)
+    tts = gTTS(goat)
+    tts.save('texttospeech.mp3')
+    playsound.playsound('texttospeech.mp3')
 
 
 def version(e):
@@ -154,66 +156,64 @@ def pastetext(e):
         text.insert(pos, selected)
 
 
-class tclass:
-    def terminal(self,e):
+def saveCurrentFile_wrapper(args):
+    saveCurrentFile()
+
+
+def saveCurrentFile():
+    global file_status
+    if file_status:
+        textr = open(file_status, 'w')
+        textr.write(text.get(1.0, END))
+        textr.close()
+        root.title(textr.name)
+    else:
+        saveAsFile()
+
+
+def new_file_wrapper(args):
+    new_file()
+
+
+def new_file():
+    text.delete("1.0", END)
+    global file_status
+    file_status = False
+    root.title("Untitled")
+
+
+def open_file_wrapper(args):
+    open_file()
+
+
+def open_file():
+    text.delete("1.0", END)
+    file = filedialog.askopenfilename(initialdir='', title="Open")
+    if file:
+        global file_status
+        file_status = file
+    file = open(file, mode='r')
+    spyders = file.read()
+    root.title(file.name)
+    text.insert(END, spyders)
+
+
+def saveAsFile():
+    textr = filedialog.asksaveasfilename(defaultextension=".txt", initialdir='', title="Save")
+    textr = open(textr, 'w')
+    textr.write(text.get(1.0, END))
+    root.title(textr.name)
+    textr.close()
+
+
+
+def terminal(e):
         os.system("python3 terminal.py")
 
-    def set_true(self):
-        global terminalstatus
-        terminalstatus = True
-        tclass.terminal("e","e")
-
-class f_menu:
-    def saveCurrentFilewrapper(args):
-        f_menu.saveCurrentFile()
-
-    def saveCurrentFile(self):
-        global file_status
-        if file_status:
-            textr = open(file_status, 'w')
-            textr.write(text.get(1.0, END))
-            textr.close()
-            root.title(textr.name)
-        else:
-            f_menu.saveAsFile()
-
-    def new_file_wrapper(args):
-        f_menu.new_file()
-
-    def new_file(self):
-        text.delete("1.0", END)
-        global file_status
-        file_status = False
-        root.title("Untitled")
-
-    def open_file_wrapper(args):
-        f_menu.open_file()
-
-    def open_file(self):
-        text.delete("1.0", END)
-        file = filedialog.askopenfilename(initialdir='', title="Open")
-        if file:
-            global file_status
-            file_status = file
-        file = open(file, mode='r')
-        spyders = file.read()
-        root.title(file.name)
-        text.insert(END, spyders)
-
-    def saveAsFile(self):
-        textr = filedialog.asksaveasfilename(defaultextension=".txt", initialdir='', title="Save")
-        textr = open(textr, 'w')
-        textr.write(text.get(1.0, END))
-        root.title(textr.name)
-        textr.close()
-
-    def tsat(self):
-        goat = text.get('1.0', END)
-        tts = gTTS(goat)
-        tts.save('texttospeech.mp3')
-        playsound.playsound('texttospeech.mp3')
-
-
+def set_true():
+    global terminalstatus
+    terminalstatus = True
+    terminal("e")
 
 global menu
 menu = Menu(root)
@@ -228,12 +228,12 @@ about_menu.add_command(label='TTS-Version', command=tsversion)
 global file_menu
 file_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label='File', menu=file_menu)
-file_menu.add_command(label="text-to-speech-contents", command=f_menu.tsat)
-file_menu.add_command(label="Open", command=f_menu.open_file(False), accelerator="Ctrl+o")
-file_menu.add_command(label="Save", command=f_menu.saveCurrentFile(False), accelerator="Ctrl+s")
-file_menu.add_command(label="Save as", command=f_menu.saveAsFile(False))
-file_menu.add_command(label="New file", command=f_menu.new_file(False), accelerator="Ctrl+n")
-file_menu.add_command(label="Destroy", command=destroy(False))
+file_menu.add_command(label="text-to-speech-contents", command=tsat)
+file_menu.add_command(label="Open", command=open_file, accelerator="Ctrl+o")
+file_menu.add_command(label="Save", command=saveCurrentFile, accelerator="Ctrl+s")
+file_menu.add_command(label="Save as", command=saveAsFile)
+file_menu.add_command(label="New file", command=new_file, accelerator="Ctrl+n")
+file_menu.add_command(label="Destroy", command=destroy)
 
 global edit_menu
 edit_menu = Menu(menu, tearoff=False)
@@ -247,7 +247,7 @@ edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z"
 global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label="Terminal",menu=terminal_menu)
-terminal_menu.add_command(label="Open Terminal",command=tclass.set_true('lol'))
+terminal_menu.add_command(label="Open Terminal",command=set_true)
 terminal_menu.add_command(label="Command",command=hashbang)
 
 
@@ -257,10 +257,10 @@ root.bind('<Control-Key-a>', select_all)
 root.bind('<Control-Key-x>', cuttext)
 root.bind('<Control-Key-c>', copytext)
 root.bind('<Control-Key-v>', pastetext)
-root.bind('<Control-Key-n>', f_menu.new_file)
-root.bind('<Control-Key-s>', f_menu.saveCurrentFilewrapper)
+root.bind('<Control-Key-n>', new_file_wrapper)
+root.bind('<Control-Key-s>', saveCurrentFile_wrapper)
 root.bind('<Control-Key-q>', version)
-root.bind('<Control-Key-o>', f_menu.open_file_wrapper)
+root.bind('<Control-Key-o>', open_file_wrapper)
 root.mainloop()
 
 # Written in pycharm on a open source license, Thanks @Jetbrains!
