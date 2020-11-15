@@ -8,4 +8,4 @@ termf.pack(fill=BOTH, expand=YES)
 wid = termf.winfo_id()
 os.system('xterm -into %d -geometry 600x400 -sb &' % wid)
 
-root.mainloop()
+root.mainloop() 

@@ -5,4 +5,3 @@ from editor import *
 from editor.settings import *
 
 root.mainloop()
-    
