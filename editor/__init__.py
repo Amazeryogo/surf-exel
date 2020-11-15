@@ -1,4 +1,4 @@
-from editor.importme install *
+from editor.importme import *
 global terminalstatus
 terminalstatus = True
 
