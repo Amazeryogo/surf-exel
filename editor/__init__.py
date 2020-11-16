@@ -1,4 +1,6 @@
 from editor.importme import *
+
+
 global terminalstatus
 terminalstatus = True
 
@@ -156,7 +158,7 @@ def pastetext(e):
         text.insert(pos, selected)
 
 
-def saveCurrentFile_wrapper(args):
+def saveCurrentFile_wrapper():
     saveCurrentFile()
 
 
@@ -171,7 +173,7 @@ def saveCurrentFile():
         saveAsFile()
 
 
-def new_file_wrapper(args):
+def new_file_wrapper():
     new_file()
 
 
@@ -182,7 +184,7 @@ def new_file():
     root.title("Untitled")
 
 
-def open_file_wrapper(args):
+def open_file_wrapper():
     open_file()
 
 
@@ -262,6 +264,7 @@ root.bind('<Control-Key-s>', saveCurrentFile_wrapper)
 root.bind('<Control-Key-q>', version)
 root.bind('<Control-Key-o>', open_file_wrapper)
 root.mainloop()
+
 
 # Written in pycharm on a open source license, Thanks @Jetbrains!
 #  https://www.jetbrains.com/?from=surf-exel
