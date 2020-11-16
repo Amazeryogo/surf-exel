@@ -39,7 +39,7 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 3) write `make`
 4) `./surf-exel`
 ### Just run `./surf-exel` if your pwd is in surf-exel directory
-### Please note that the terminal in surf-exel works on linux only, if you want to use it on a mac , change xterm to iterm2
+### Please note that the terminal in surf-exel works on linux only because it uses xterm as it's terminal, if you want to use it on a mac , change xterm to iterm2
 
 ## Windows 
 please see the NOTE above (sorry for the trouble).
