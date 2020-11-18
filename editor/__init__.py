@@ -1,6 +1,5 @@
 from editor.importme import *
 
-
 global terminalstatus
 terminalstatus = True
 
@@ -51,7 +50,8 @@ def tsversion():
     tts.save('version.mp3')
     playsound.playsound('version.mp3')
 
-#destroy file
+
+# destroy file
 
 def destroy():
     file = filedialog.askopenfilename(initialdir='', title="Open")
@@ -60,6 +60,7 @@ def destroy():
             f.truncate()
             f.close()
             messagebox.showinfo('Done', "destroyed successfully")
+
 
 # find in file
 
@@ -79,6 +80,7 @@ def find():
 
         text.tag_config('found', foreground="red")
     edit.focus_set()
+
 
 def replacex():
     text.tag_remove('found', '1.0', END)
@@ -146,10 +148,10 @@ def copytext(e):
 
 def hashbang():
     x = simpledialog.askstring("One liner", "Enter your shell command")
-    Outputfile=os.popen(x)
-    Output=Outputfile.read()
+    Outputfile = os.popen(x)
+    Output = Outputfile.read()
     Outputfile.close()
-    messagebox.showinfo('Output',Output)
+    messagebox.showinfo('Output', Output)
 
 
 def pastetext(e):
@@ -208,14 +210,15 @@ def saveAsFile():
     textr.close()
 
 
-
 def terminal(e):
-        os.system("python3 terminal.py")
+    os.system("python3 terminal.py")
+
 
 def set_true():
     global terminalstatus
     terminalstatus = True
     terminal("e")
+
 
 global menu
 menu = Menu(root)
@@ -248,10 +251,9 @@ edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z"
 
 global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
-menu.add_cascade(label="Terminal",menu=terminal_menu)
-terminal_menu.add_command(label="Open Terminal",command=set_true)
-terminal_menu.add_command(label="Command",command=hashbang)
-
+menu.add_cascade(label="Terminal", menu=terminal_menu)
+terminal_menu.add_command(label="Open Terminal", command=set_true)
+terminal_menu.add_command(label="Command", command=hashbang)
 
 frame.pack(pady=5)
 text.pack(fill=BOTH, side=BOTTOM, expand=True)
@@ -264,7 +266,6 @@ root.bind('<Control-Key-s>', saveCurrentFile_wrapper)
 root.bind('<Control-Key-q>', version)
 root.bind('<Control-Key-o>', open_file_wrapper)
 root.mainloop()
-
 
 # Written in pycharm on a open source license, Thanks @Jetbrains!
 #  https://www.jetbrains.com/?from=surf-exel
