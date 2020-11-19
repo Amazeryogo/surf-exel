@@ -33,8 +33,8 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 4) `./surf-exel`
 ### Just run `./surf-exel` if your pwd is in surf-exel directory
 ### Please note that the terminal in surf-exel works on linux only because it uses xterm as it's terminal, if you want to use it on a mac , change xterm to iterm2
-if you like the bleeding edge of surf-exel, you can download it using 
-`sudo git clone https://github.com/Amazeryogo/surf-exel && cd surf-exel && mkdir .cache && make
+### if you like the bleeding edge of surf-exel, you can download it using 
+ `sudo git clone https://github.com/Amazeryogo/surf-exel && cd surf-exel && mkdir .cache && make
 `
 ### Warning!: We do not recommend going to the bleeding edge 
 
