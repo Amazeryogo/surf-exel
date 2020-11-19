@@ -72,13 +72,10 @@ def find():
         spyder = '1.0'
         while 1:
             spyder = text.search(s, spyder, stopindex=END, regexp=True)
-
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
-
             text.tag_add('found', spyder, lastspyder)
             spyder = lastspyder
-
         text.tag_config('found', foreground="red")
     edit.focus_set()
 
@@ -87,11 +84,10 @@ def replacex():
     text.tag_remove('found', '1.0', END)
     s = edit.get()
     r = edit2.get()
-    if (s and r):
+    if s and r:
         spyder = '1.0'
         while 1:
             spyder = text.search(s, spyder, stopindex=END, regexp=True)
-
             print(spyder)
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
@@ -100,13 +96,11 @@ def replacex():
             lastspyder = '% s+% dc' % (spyder, len(r))
             text.tag_add('found', spyder, lastspyder)
             spyder = lastspyder
-
         text.tag_config('found', foreground=fc, background=bc)
     edit.focus_set()
 
 
-Find.config(command=find)
-replaceall.config(command=replacex)
+
 
 
 def tsat():
@@ -222,6 +216,8 @@ global menu
 menu = Menu(root)
 root.config(menu=menu)
 
+Find.config(command=find)
+replaceall.config(command=replacex)
 
 
 global about_menu
