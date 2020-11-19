@@ -7,9 +7,10 @@ terminalstatus = True
 global ev
 ev = 'surf-exel v5.8'
 # base title
+
 base_title = "Surf-exel"
 
-# the window 
+# the window
 root = Tk()
 root.title(base_title)
 root.geometry("600x400")
@@ -94,12 +95,9 @@ def replacex():
             print(spyder)
             if not spyder: break
             lastspyder = '% s+% dc' % (spyder, len(s))
-
             text.delete(spyder, lastspyder)
             text.insert(spyder, r)
-
             lastspyder = '% s+% dc' % (spyder, len(r))
-
             text.tag_add('found', spyder, lastspyder)
             spyder = lastspyder
 
@@ -224,11 +222,15 @@ global menu
 menu = Menu(root)
 root.config(menu=menu)
 
+
+
 global about_menu
 about_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label='About', menu=about_menu)
 about_menu.add_command(label="Version", command=version('e'))
 about_menu.add_command(label='TTS-Version', command=tsversion)
+
+
 
 global file_menu
 file_menu = Menu(menu, tearoff=False)
@@ -240,6 +242,8 @@ file_menu.add_command(label="Save as", command=saveAsFile)
 file_menu.add_command(label="New file", command=new_file, accelerator="Ctrl+n")
 file_menu.add_command(label="Destroy", command=destroy)
 
+
+
 global edit_menu
 edit_menu = Menu(menu, tearoff=False)
 menu.add_cascade(label='Edit', menu=edit_menu)
@@ -248,6 +252,8 @@ edit_menu.add_command(label="Copy", command=lambda: copytext(False), accelerator
 edit_menu.add_command(label="Paste", command=lambda: pastetext(False), accelerator="Ctrl+v")
 edit_menu.add_command(label="Redo", command=text.edit_redo, accelerator="Ctrl+y")
 edit_menu.add_command(label="Undo", command=text.edit_undo, accelerator="Ctrl+z")
+
+
 
 global terminal_menu
 terminal_menu = Menu(menu, tearoff=False)
