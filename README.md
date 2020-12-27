@@ -5,7 +5,7 @@ It is lightweight and easily customizable to suit your needs.
 The non-GUI version was inspired by ed , a simple GNU text editor.
 
 # How fast does it get updated ?
-A new version of surf-exel is released in the time space of 18 hours to 18 days.
+A new version of surf-exel is released in the time space of 18 hours to any number of days.
 You have to update it manually though. 
 
 # Can I contribute in it? Will a PR be counted in the Hacktoberfest?
