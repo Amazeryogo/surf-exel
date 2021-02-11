@@ -1,13 +1,9 @@
 # What is Surf-exel?
 
-Surf-exel is a simple editor built on top of Tkinter and written entirely in Python3 (along with some shell files).
+Surf-exel is a simple editor built on top of Tkinter and written entirely in Python3.
 It is lightweight and easily customizable to suit your needs. 
 The non-GUI version was inspired by ed , a simple GNU text editor.
-
-# How fast does it get updated ?
-A new version of surf-exel is released in the time space of 18 hours to any number of days.
-You have to update it manually though. 
-
+ 
 # Can I contribute in it? Will a PR be counted in the Hacktoberfest?
 Yes, Absolutely , All contributions are welcome and accepted! (As long as they make sense to be added).
 All PR contributions are counted in the Hacktoberfest.
