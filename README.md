@@ -7,8 +7,7 @@ The non-GUI version was inspired by ed , a simple GNU text editor.
 # Can I contribute in it? Will a PR be counted in the Hacktoberfest?
 Yes, Absolutely , All contributions are welcome and accepted! (As long as they make sense to be added).
 All PR contributions are counted in the Hacktoberfest.
-# Can my computer run it?
-See the supportedplatforms.md in docs to find out if your computer can run surf-exel.
+
 
 # Prerequisites
 
@@ -19,7 +18,7 @@ git, xterm for linux or iterm2 for MacOS
 Surf-exel is not supported on Windows, please use a build below v5.7
 
 ## Below v5.7
-Surf-exel may not work on Microsoft Windows , if thats the case, please try running main.py only and not building it using run.sh , sorry for the trouble. 
+Surf-exel may not work on Microsoft Windows , if thats the case, please try running main.py only and not building it, sorry for the trouble. 
 
 # How to run it ?
 ## Linux/MacOS
