@@ -10,15 +10,8 @@ All PR contributions are counted in the Hacktoberfest.
 
 
 # Prerequisites
-
 git, xterm for linux or iterm2 for MacOS 
 
-# NOTE 
-## 5.7 and Above
-Surf-exel is not supported on Windows, please use a build below v5.7
-
-## Below v5.7
-Surf-exel may not work on Microsoft Windows , if thats the case, please try running main.py only and not building it, sorry for the trouble. 
 
 # How to run it ?
 ## Linux/MacOS
@@ -34,8 +27,11 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 
 
 ## Windows 
-please see the NOTE above (sorry for the trouble).
+## 5.7 and Above
+Surf-exel is not supported on Windows, please use a build below v5.7
 
+## Below v5.7
+Surf-exel may not work on Microsoft Windows , if thats the case, please try running main.py only and not building it, sorry for the trouble. 
 
 
 
