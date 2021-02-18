@@ -29,7 +29,7 @@ Surf-exel may not work on Microsoft Windows , if thats the case, please try runn
 ### Just run `./surf-exel` if your pwd is in surf-exel directory
 ### Please note that the terminal in surf-exel works on linux only because it uses xterm as it's terminal, if you want to use it on a mac , change xterm to iterm2
 ### if you like one liners, you can download it using 
-` git clone https://github.com/Amazeryogo/surf-exel --tag 5.8 && mv 5.8 surf-exel && cd surf-exel && mkdir .cache && make
+` git clone https://github.com/Amazeryogo/surf-exel --tag 5.8.1 && mv 5.8.1 surf-exel && cd surf-exel && mkdir .cache && make
 `
 
 
