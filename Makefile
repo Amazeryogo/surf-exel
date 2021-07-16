@@ -1,4 +1,7 @@
 CWD = ${PWD}
+
+mkdir $(CWD)/.cache/
+
 surf-exel: gtts pls pyi
 	pyinstaller --onefile --name surf-exel  main.py 
 	mv $(CWD)/dist/surf-exel /bin/
