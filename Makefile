@@ -1,12 +1,12 @@
 CWD = ${PWD}
 
-mkdir $(CWD)/.cache/
 
 surf-exel: gtts pls pyi
 	pyinstaller --onefile --name surf-exel  main.py 
 	mv $(CWD)/dist/surf-exel /bin/
 
 gtts: pp3 
+
 	pip3 install gTTS
 	touch $(CWD)/.cache/gtts
 	echo "done!" > $(CWD)/.cache/gtts
@@ -22,6 +22,7 @@ pyi: pp3
 	echo "done!" > $(CWD)/.cache/pyi
 
 pp3:
+	mkdir $(CWD)/.cache/
 	touch $(CWD)/.cache/pp3
 	echo "done!" > $(CWD)/.cache/pp3
 
