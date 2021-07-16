@@ -1,7 +1,7 @@
 CWD = ${PWD}
 surf-exel: gtts pls pyi
 	pyinstaller --onefile --name surf-exel  main.py 
-	mv $(CWD)/dist/surf-exel $(CWD)/
+	mv $(CWD)/dist/surf-exel /bin/
 
 gtts: pp3 
 	pip3 install gTTS
